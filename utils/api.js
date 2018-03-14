@@ -1,5 +1,5 @@
 // 主地址
-const api = '';
+const api = 'https://www.smxwtc.club/?';
 // 登录
 const v1 = 'user-login.htm';
 function login() {
@@ -36,12 +36,12 @@ function addNotice() {
   return api + v7;
 };
 // 获取便民信息列表
-const v8 = 'getUserTypeList.htm';
+const v8 = 'notice-typelist.htm';
 function getUserTypeList() {
   return api + v8;
 };
 // 获取个人发布列表
-const v9 = 'getUserList.htm';
+const v9 = 'notice-read_by_user.htm';
 function getUserList() {
   return api + v9;
 };
@@ -76,7 +76,7 @@ function getPeizhi() {
 };
 
 //获取类目信息
-const v16 = 'getTypes.htm';
+const v16 = 'notice-read_by_type.htm';
 function getTypes() {
   return api + v16;
 };

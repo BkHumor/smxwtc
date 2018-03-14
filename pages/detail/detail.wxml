@@ -33,7 +33,7 @@
       </view>
       <view class="user_detail_pic" wx:if="{{item.pic_list.length}}!=0">
         <block wx:for="{{item.pic_list}}" wx:for-item="image">
-          <image class="detail_pic" bindtap="showPic" data-allPic="{{item.pic_list}}" data-ip="{{item.web_server}}" data-pic="{{item.web_server}}{{image.logo}}" src="{{item.web_server}}{{image.thumb_logo}}"></image>
+          <image class="detail_pic" bindtap="showPic" data-allPic="{{item.pic_list}}" data-ip="{{item.web_server}}" data-pic="{{item.web_server}}{{image.logo}}" src="{{image.filename}}"></image>
         </block>  
       </view>
       <view class="user_detail_addr">

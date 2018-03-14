@@ -644,9 +644,10 @@ Page({
           for (i; i < this.data.imageList.length; i++) {
             request.addNoticePic(
               {
-                "id": parseInt(res.data.lastid),
+                "id": res.data.lastid,
               }, that.data.imageList[i],
               (r) => {
+                
                 if (r.data.status == "error") {
                   wx.showModal({
                     title: '提示',

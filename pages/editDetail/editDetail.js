@@ -366,7 +366,7 @@ Page({
         "id": options.editId
        },
       (res) => {
-        console.log('aaaaaaaaaaaaaaaa'+res.data);
+        console.log('aaaaaaaaaaaaaaaa'+res.data.tid);
         
         that.setData({
           listInfo: res.data,
@@ -388,56 +388,56 @@ Page({
         })
 
         switch (res.data.tid) {
-          case '1':
+          case 1:
             that.setData({
               showMoneyBox: true,
               showAreaBox: false,
               showInfo: that.data.spzz
             })
             break;
-          case '2':
+          case 2:
             that.setData({
               showMoneyBox: true,
               showAreaBox: false,
               showInfo: that.data.fwcs
             })
             break;
-          case '3':
+          case 3:
             that.setData({
               showMoneyBox: true,
               showAreaBox: true,
               showInfo: that.data.zp
             })
             break;
-          case '4':
+          case 4:
             that.setData({
               showMoneyBox: true,
               showAreaBox: false,
               showInfo: that.data.cwzj
             })
             break;
-          case '5':
+          case 5:
             that.setData({
               showMoneyBox: true,
               showAreaBox: false,
               showInfo: that.data.fwcz
             })
             break;
-          case '6':
+          case 6:
             that.setData({
               showMoneyBox: true,
               showAreaBox: false,
               showInfo: that.data.eswp
             })
             break;
-          case '7':
+          case 7:
             that.setData({
               showMoneyBox: true,
               showAreaBox: false,
               showInfo: that.data.jyfd
             })
             break;
-          case '8':
+          case 8:
             that.setData({
               showMoneyBox: false,
               showAreaBox: false,

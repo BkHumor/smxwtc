@@ -147,7 +147,7 @@ page {
   margin-right: 30rpx;
   font-family:"PingFangSC-Regular","sans-serif","STHeitiSC-Light","微软雅黑","Microsoft YaHei";
   font-size: 30rpx;
-  color:rgb(255, 162, 0);
+  color:red;
 }
 .user_detail_info text{
   line-height: 30rpx;

@@ -23,7 +23,7 @@
       <view class="cartbox" wx:if="{{showCart}}">
           <view class="cart_select" hidden="{{cartChoice}}"></view>
           <view wx:for="{{list}}"  class="conitem {{num1 == item.id?'selected':''}}" data-id="{{item.id}}"  data-cart="{{item.tname}}" bindtap="cartSelect">
-            {{item.name}}
+            {{item.tname}}
           </view> 
       </view>
       <!--cart结束-->
