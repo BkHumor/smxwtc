@@ -1,17 +1,32 @@
 
 <!--首页轮播图开始-->
 <swiper indicator-dots="true" autoplay="true" circular="true" style="height:165px;">
-  <block wx:for="{{imgUrls}}">
+  <block wx:for="{{imgUrls}}" wx:key="item">
     <swiper-item>
       <image data-id="{{item.id}}" src="{{item.pic_url}}" bindtap="goBanner" class="slide-image" style="width:100%;height:165px;" />
     </swiper-item>
   </block>
 </swiper>
 <!--首页轮播图结束-->
+<view class="lineBg"></view>
+<!--公告开始  -->
+<view class="">
+<swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="2000">
+    <block wx:for="{{msgList}}">
+      <navigator url="/pages/index/index?title={{item.url}}" open-type="navigate">
+        <swiper-item>
+          <view class="swiper_item">{{item.title}}</view>
+        </swiper-item>
+      </navigator>
+    </block>
+  </swiper>
+</view>
 
+<!--公告结束  -->
 <!--快速入口开始-->
-<view class="body">
-  <block wx:for="{{pic1}}">
+
+<view class="body type_box">
+  <block wx:for="{{pic1}}" wx:key="item">
     <view class="body_item" data-id="{{item.id}}" bindtap="goDetail">
       <image class="body_pic" src="{{item.pic}}"></image>
       <view class="body_name">{{item.name}}</view>
@@ -19,7 +34,7 @@
   </block>
 </view>
 <view class="body" style="padding-top:0rpx;padding-bottom:20rpx;">
-  <block wx:for="{{pic2}}">
+  <block wx:for="{{pic2}}" wx:key="item">
     <view class="body_item" data-id="{{item.id}}" bindtap="goDetail">
       <image class="body_pic" src="{{item.pic}}"></image>
       <view class="body_name">{{item.name}}</view>
@@ -27,21 +42,22 @@
   </block>
 </view>
 <view class="body" style="padding-top:0rpx;padding-bottom:20rpx;">
-  <block wx:for="{{pic3}}">
+  <block wx:for="{{pic3}}" wx:key="item">
     <view class="body_item" data-id="{{item.id}}" bindtap="goDetail">
       <image class="body_pic" src="{{item.pic}}"></image>
       <view class="body_name">{{item.name}}</view>
     </view>
   </block>
 </view>
+
 <!--快速入口结束-->
 <view class="lineBg"></view>
 <!--商家活动开始-->
 <view class="activity">
-    <text>商家活动</text>
+    <text>三门峡方言动态</text>
 </view> 
 <view class="ele-container">
-  <block wx:for="{{funnyPic}}">
+  <block wx:for="{{funnyPic}}" wx:key="item">
     <view class="funny_item" data-id="{{item.id}}">
       <image class="funny_pic" src="{{item.pic}}"></image>
       <view class="funny_name">{{item.title}}</view>

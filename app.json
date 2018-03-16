@@ -11,7 +11,7 @@
     "pages/editDetail/editDetail"
   ],
   "window": {
-    "enablePullDownRefresh": false,
+    "enablePullDownRefresh": true,
     "navigationBarBackgroundColor": "#1A93DF",
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "三门峡微同城"

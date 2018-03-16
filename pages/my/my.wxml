@@ -15,27 +15,39 @@
   
      <view class="weui-cells weui-cells_after-title">
         <navigator url="../edit/edit" class="weui-cell weui-cell_access" style="line-height:88rpx;font-size:36rpx;" hover-class="weui-cell_active">
-          <!--<view class="weui-cell__hd">
-            <image src="../../images/selected-collection.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
-          </view>-->
           <view class="weui-cell__bd">
             <image src="../../images/feiji.png" class="feiji_icon"></image>
-            <text class="feiji_word">我的发布</text>
+            <text class="feiji_word">我发布的</text>
           </view>
           <view class="weui-cell__ft weui-cell__ft_in-access"></view>
         </navigator>
+
+                <navigator url="../edit/edit" class="weui-cell weui-cell_access" style="line-height:88rpx;font-size:36rpx;" hover-class="weui-cell_active">
+          <view class="weui-cell__bd">
+            <image src="../../images/shuo.png" class="shuo_icon"></image>
+            <text class="shuo_word">我说过的</text>
+          </view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+           </navigator>
+                <navigator url="../edit/edit" class="weui-cell weui-cell_access" style="line-height:88rpx;font-size:36rpx;" hover-class="weui-cell_active">
+          <view class="weui-cell__bd">
+            <image src="../../images/ping.png" class="ping_icon"></image>
+            <text class="ping_word">我的评论</text>
+          </view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+          </navigator>
   </view>
   <view class="about">
     <view class="about_info">
     </view>
     <view class="about_tel">
-      <template is="wxParse" data="{{wxParseData:xiaoquxx.nodes}}"/> 
+    
     </view>
   </view>
   <view class="about_bottom">
     <view><text></text></view>
     <view>
-      <text></text>
+      <text>联系方式：13137977266</text>
     </view>
   </view>
   

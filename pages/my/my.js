@@ -33,12 +33,6 @@ Page({
           list: res.data
         })
       },
-    ),
-      request.getPeizhi(
-      { "session_id": app.globalData.session_id },
-      (res) => {
-        WxParse.wxParse('xiaoquxx', 'html', res.data.xiaoquxx, that, 5);
-      },
     )
   },
   onHide: function () {

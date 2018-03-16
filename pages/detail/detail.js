@@ -43,7 +43,7 @@ Page({
     });
     tid = options.id;
     aid = options.aid;
-
+    page = 1;
     var that = this;
     request.getArea(
       { "session_id": app.globalData.session_id },
@@ -71,6 +71,7 @@ Page({
         "tid": tid,
         "aid": aid,
         "p": page,
+      
       },
       (res) => {
         console.log(res);
@@ -99,12 +100,14 @@ Page({
     this.setData({
       itemWidth: '180rpx'
     });
+    if(page == 1) {
     request.getUserTypeList(
       {
         "session_id": app.globalData.session_id,
         "tid": tid,
         "aid": aid,
         "p": page,
+       
       },
       (res) => {
         console.log(res);
@@ -125,6 +128,7 @@ Page({
           })
         }
       })
+    }
   },
   //下拉刷新
   onPullDownRefresh: function () {
@@ -154,6 +158,7 @@ Page({
   //上拉加载
   onReachBottom: function () {
     var that = this;
+    if(aid == 0 || aid == undefined) {
     page += 1;
       //（5）判断是不是第一次进来
     if (page > 1) {//不是第一次
@@ -167,8 +172,13 @@ Page({
           "p":page,
         },
         (res) => {
-          console.log(res.data);
-            totalList = that.data.list.concat(res.data.data);
+         
+            if(res.data.code == '200') {
+              totalList = that.data.list.concat(res.data.data);
+            } else {
+              totalList = that.data.list;
+            }
+           
             that.setData({
               list: totalList
             })
@@ -184,6 +194,7 @@ Page({
               })
             } 
             //没有更多
+           
              if (res.data.code == "202"){
               that.setData({
                 tipWord: res.data.msg,
@@ -201,7 +212,10 @@ Page({
       } 
   
     
-  },
+  
+  
+  
+  }},
   //地区切换
   tabChange: function (e) {
     var that = this;
@@ -215,6 +229,10 @@ Page({
     this.setData({
       activeIndex: get_type
     });
+    if(get_type==0) {
+ 
+      this.onLoad({ "aid":get_type,"id":tid});
+    } else {
     request.getUserTypeList(
       {
         "session_id": app.globalData.session_id,
@@ -223,21 +241,25 @@ Page({
       },
       (res) => {
         console.log(res);
+        if (res.data.code == '200') {
         that.setData({
           list: res.data.data
         })
+        }
         if (res.data.code == "203") {
-          that.setData({
-            tipWord: res.data.msg,
-            showTipimg: true,
-            showTipword: true,
-            showBtn: true,
-            showCountry: true,
+
+            that.setData({
+              tipWord: res.data.msg,
+              list:[],
+              showTipimg: true,
+              showTipword: true,
+              showBtn: true,
+       
           })
         }
       },
     )
-  },
+  }},
   //拨打电话
   goPhone: function (e) {
     wx.makePhoneCall({

@@ -68,7 +68,7 @@ Page({
       },
       {
         "id": 12,
-        "name": '综合信息',
+        "name": '其他',
         "pic": '../../images/serPic12.png'
       },
     ]
@@ -86,7 +86,7 @@ Page({
       }
     }
   },
-  onLoad: function (options) {
+  onLoad: function (e, options) {
     // 页面初始化 options为页面跳转所带来的参数
     wx.checkSession({
       success: function () {
@@ -98,6 +98,13 @@ Page({
         //登录态过期
         app.getUserInfo();
       }
+    });
+    console.log(e.title)
+    this.setData({
+      msgList: [
+        { url: "url", title: "公告：多地首套房贷利率上浮 热点城市渐迎零折扣时代" },
+        { url: "url", title: "公告：悦如公寓三周年生日趴邀你免费吃喝欢唱" },
+        { url: "url", title: "公告：你想和一群有志青年一起过生日嘛？" }]
     });
   },
   onReady: function () {

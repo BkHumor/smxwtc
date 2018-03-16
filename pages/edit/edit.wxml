@@ -1,7 +1,7 @@
 
 
 
-<block wx:for="{{list}}">
+<block wx:for="{{list}}" wx:key="item">
   <view class="detail">
     <view class="user_icon">
     <image src="{{item.pic}}" class="user_logo"></image>
@@ -17,7 +17,7 @@
     </view>
     <view class="user_detail_pic" wx:if="{{item.pic_list.length}}!=0">
       <block wx:for="{{item.pic_list}}" wx:for-item="image">
-        <image class="detail_pic" bindtap="showPic" data-allPic="{{item.pic_list}}" data-ip="{{item.web_server}}" data-pic="{{image.filname}}" src="{{image.filname}}"></image>
+        <image class="detail_pic" bindtap="showPic" data-allPic="{{item.pic_list}}" data-ip="{{item.web_server}}" data-pic="{{image.filename}}" src="{{image.filename}}"></image>
       </block>  
     </view>
     <view class="user_detail_addr">

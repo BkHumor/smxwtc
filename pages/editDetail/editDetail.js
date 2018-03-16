@@ -1,7 +1,7 @@
 // pages/publish/publish.js
 var request = require('../../utils/request.js');
 var app = getApp();
-var tid, aid, area,dd, money, descript, phone, pic = 0;
+var tid, aid, area, dd, money, descript, phone, pic = 0;
 Page({
   data: {
     firsrCart: "发布类目",
@@ -239,86 +239,85 @@ Page({
 
     //选择数据
     var that = this;
-    console.log('xxxxxxxxxxxxxx'+that.data.cartid);
     switch (that.data.cartid) {
-      case '1':
+      case 1:
         that.setData({
           showMoneyBox: true,
           showAreaBox: false,
           showInfo: that.data.spzz
         })
         break;
-      case '2':
+      case 2:
         that.setData({
           showMoneyBox: true,
           showAreaBox: false,
           showInfo: that.data.fwcs
         })
         break;
-      case '3':
+      case 3:
         that.setData({
           showMoneyBox: true,
           showAreaBox: true,
           showInfo: that.data.zp
         })
         break;
-      case '4':
+      case 4:
         that.setData({
           showMoneyBox: true,
           showAreaBox: false,
           showInfo: that.data.cwzj
         })
         break;
-      case '5':
+      case 5:
         that.setData({
           showMoneyBox: true,
           showAreaBox: false,
           showInfo: that.data.pccx
         })
         break;
-      case '6':
+      case 6:
         that.setData({
           showMoneyBox: true,
           showAreaBox: false,
           showInfo: that.data.eswp
         })
         break;
-      case '7':
+      case 7:
         that.setData({
           showMoneyBox: true,
           showAreaBox: false,
           showInfo: that.data.jyfd
         })
         break;
-      case '8':
+      case 8:
         that.setData({
           showMoneyBox: true,
           showAreaBox: false,
           showInfo: that.data.hljy
         })
         break;
-      case '9':
+      case 9:
         that.setData({
           showMoneyBox: true,
           showAreaBox: false,
           showInfo: that.data.jzlw
         })
         break;
-      case '10':
+      case 10:
         that.setData({
           showMoneyBox: false,
           showAreaBox: false,
           showInfo: that.data.wyqz
         })
         break;
-      case '11':
+      case 11:
         that.setData({
           showMoneyBox: true,
           showAreaBox: false,
           showInfo: that.data.nfcp
         })
         break;
-      case '12':
+      case 12:
         that.setData({
           showMoneyBox: false,
           showAreaBox: false,
@@ -366,8 +365,6 @@ Page({
         "id": options.editId
        },
       (res) => {
-        console.log('aaaaaaaaaaaaaaaa'+res.data.tid);
-        
         that.setData({
           listInfo: res.data,
           cartid: res.data.tid,
@@ -383,61 +380,89 @@ Page({
           selectArea: false,
           showDetail: true,
           optionsId: options.editId,
-          piclist: res.data.piclist,
-          web_server: res.data.web_server
+          piclist: res.data.pic_list,
+         
         })
 
         switch (res.data.tid) {
-          case 1:
+          case '1':
             that.setData({
               showMoneyBox: true,
               showAreaBox: false,
               showInfo: that.data.spzz
             })
             break;
-          case 2:
+          case '2':
             that.setData({
               showMoneyBox: true,
               showAreaBox: false,
               showInfo: that.data.fwcs
             })
             break;
-          case 3:
+          case '3':
             that.setData({
               showMoneyBox: true,
               showAreaBox: true,
               showInfo: that.data.zp
             })
             break;
-          case 4:
+          case '4':
             that.setData({
               showMoneyBox: true,
               showAreaBox: false,
               showInfo: that.data.cwzj
             })
             break;
-          case 5:
+          case '5':
             that.setData({
               showMoneyBox: true,
               showAreaBox: false,
-              showInfo: that.data.fwcz
+              showInfo: that.data.pccx
             })
             break;
-          case 6:
+          case '6':
             that.setData({
               showMoneyBox: true,
               showAreaBox: false,
               showInfo: that.data.eswp
             })
             break;
-          case 7:
+          case '7':
             that.setData({
               showMoneyBox: true,
               showAreaBox: false,
               showInfo: that.data.jyfd
             })
             break;
-          case 8:
+          case '8':
+            that.setData({
+              showMoneyBox: true,
+              showAreaBox: false,
+              showInfo: that.data.hljy
+            })
+            break;
+          case '9':
+            that.setData({
+              showMoneyBox: true,
+              showAreaBox: false,
+              showInfo: that.data.jzlw
+            })
+            break;
+          case '10':
+            that.setData({
+              showMoneyBox: false,
+              showAreaBox: false,
+              showInfo: that.data.wyqz
+            })
+            break;
+          case '11':
+            that.setData({
+              showMoneyBox: true,
+              showAreaBox: false,
+              showInfo: that.data.nfcp
+            })
+            break;
+          case '12':
             that.setData({
               showMoneyBox: false,
               showAreaBox: false,
@@ -523,8 +548,9 @@ Page({
       success: function (res) {
         if (res.confirm) {
           wx.request({
-            url: 'https://www.smxwtc.club/pic-delete.htm',
+            url: 'https://www.smxwtc.club/?notice-delpic.htm',
             data: {
+              "session_id": app.globalData.session_id,
               'id': e.currentTarget.dataset.id
             },
             method: 'POST',

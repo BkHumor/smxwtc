@@ -1,9 +1,15 @@
 /* pages/index/index.wxss */
 .body{
     margin: 0 auto;
-    padding:20rpx 0rpx 0rpx 40rpx;
+    padding:10rpx 0rpx 0rpx 40rpx;
     display: flex;
     flex-direction: row;
+   
+}
+.type_box{
+   margin-top:38px;
+   border-top:17px solid #efeff4;
+
 }
 .body_item{
     text-align: center;
@@ -51,4 +57,26 @@
   color:rgb(136, 136, 136);
   padding-left: 30rpx;
   margin-top: 32rpx;
+}
+.swiper_container {
+  height: 55rpx;
+  width: 80vw;
+  float:left;
+  margin-left:40px;
+  margin-top:10px;
+  
+}
+.pm_block {
+  height: 20px;
+  margin-top:15px;
+  margin-left:35px;
+  padding-left:35px;
+}
+.swiper_item {
+  font-size: 25rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  letter-spacing: 2px;
+  color:#117887
 }

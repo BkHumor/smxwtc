@@ -70,10 +70,10 @@
           </view>
           <view class="weui-cell__bd" style="padding:20rpx; z-index:10;">
             
-              <block wx:for="{{piclist}}">
+              <block wx:for="{{piclist}}" wx:for-item="image">
                 <view class="scroll-view-item_H">
-                  <image src="{{web_server}}{{item.thumb_logo}}" class="scroll_pic" ></image>
-                <view data-id="{{item}}" data-index="{{index}}" class="del-old" bindtap="del" data-id="{{item.id}}"><image src="../../images/close.png"></image>
+                  <image src="{{image.filename}}" class="scroll_pic" ></image>
+                <view data-id="{{image.aid}}" data-index="{{index}}" class="del-old" bindtap="del" data-id="{{image.aid}}"><image src="../../images/close.png"></image>
                 </view>
                 
                 </view>

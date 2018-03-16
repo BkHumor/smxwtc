@@ -11,6 +11,10 @@ Page({
     showDetail: true,
     showMoneyBox: true,
     showAreaBox: false,
+    //发布按钮
+    btndisabled:false,
+    btnloading:false,
+    btnmsg:"立即发布",
     // 选择地址
     location: '',
     lat: '',
@@ -404,6 +408,10 @@ Page({
   //页面展示选择地址
   onShow: function () {
     var that = this;
+    that.setData({
+      btndisabled: false,
+      btnloading: false
+    })
     wx.getLocation({
       type: 'wgs84',
       success: function (res) {
@@ -612,8 +620,12 @@ Page({
     }
   },
   upload: function () {
+   
     var that = this;
-
+    that.setData({
+      btndisabled: true,
+      btnloading: true
+    })
     request.addNotice(
       {
         "session_id": app.globalData.session_id,

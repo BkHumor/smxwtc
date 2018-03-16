@@ -96,7 +96,7 @@
           </view>
         
           <view class="pub_btn">
-              <button form-type="submit" bindtap="form_reset">立即发布</button>
+              <button form-type="submit" disabled="{{btndisabled}}" loading="{{btnloading}}" bindtap="form_reset">{{btnmsg}}</button>
           </view>
 
 

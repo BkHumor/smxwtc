@@ -143,13 +143,13 @@ Page {
   height: 50rpx;
 }
 
-.feiji_icon{
+.feiji_icon, .shuo_icon, .ping_icon{
   width: 34rpx;
   height: 34rpx;
   vertical-align: middle;
 }
 
-.feiji_word{
+.feiji_word, .shuo_word, .ping_word{
    line-height: 60rpx;
    font-family:"PingFangSC-Regular","sans-serif","STHeitiSC-Light","微软雅黑","Microsoft YaHei";
    font-size: 30rpx;
