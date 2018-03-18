@@ -182,7 +182,7 @@ page {
   margin-left: 10rpx;
   font-family:"PingFangSC-Regular","sans-serif","STHeitiSC-Light","微软雅黑","Microsoft YaHei";
   font-size: 24rpx;
-  color:rgb(178, 178, 178);
+  color:lightblue;
 }
 .phone_button {
   display: inline-block;

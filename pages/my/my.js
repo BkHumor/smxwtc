@@ -28,7 +28,11 @@ Page({
     request.getUser(
       { "session_id": app.globalData.session_id },
       (res) => {
-        console.log(res);
+        if (res.data.sex == "" || res.data.sex == 0){
+          res.data.sex="../../../images/nv.png" ;
+        } else {
+          res.data.sex = "../../../images/nan.png";
+        }
         that.setData({
           list: res.data
         })

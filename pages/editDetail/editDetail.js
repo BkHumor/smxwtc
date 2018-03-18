@@ -24,13 +24,11 @@ Page({
     areaid: 1,
     showInfo: {},
     uploadPicBtn: true,
-    spzz: {
-      "area": "商铺名称：",
-      "areaPlaceholder": "（如：某某便民服务店）",
-      "money": '商铺租金：',
-      "moneyPlaceholder": "（如：2000元/月）",
-      "descript": '商铺描述：',
-      "descriptPlaceholder": "（如：某某底商，80平，煤气/燃气、暖气、厨房、卫生间。）",
+    ylys: {
+      "area": "营业店：",
+      "areaPlaceholder": "（如：某某KTV）",
+      "descript": '具体描述：',
+      "descriptPlaceholder": "（如：某某KTV,包下午场13点~18点,100元）",
       "phonePlaceholder": "请输入联系电话",
       "phone": "联系电话"
     },
@@ -79,17 +77,6 @@ Page({
       "descript": '服务描述：',
       "descriptPlaceholder": "（如：早晨八点上班，晚上五点下班，希望找一个顺路的，长期拼车，单程20，往返30.女士优先，车上禁止吃东西，禁止吸烟。）",
     },
-
-    fwcz: {
-      "area": "小区名称：",
-      "areaPlaceholder": "（如：某某小区）",
-      "money": '房屋租金：',
-      "moneyPlaceholder": "(如：2000元/月）",
-      "descript": '房屋描述',
-      "descriptPlaceholder": "（如：三室一厅，押一付三，5层/12层，精装修，可小刀）",
-      "phonePlaceholder": "请输入联系电话",
-      "phone": "联系电话"
-    },
     eswp: {
       "area": "物品名称：",
       "areaPlaceholder": "（如：9成新iPhone7）",
@@ -107,45 +94,6 @@ Page({
       "moneyPlaceholder": "（如：60元/课时）",
       "descript": '详细描述',
       "descriptPlaceholder": "（如：专业的数学培训，多年教学辅导经验。学生参加奥数竞赛获得优异成绩。只接受晚上一对一辅导，每次两个课时，20课时起报。）",
-      "phonePlaceholder": "请输入联系电话",
-      "phone": "联系电话"
-    },
-    jzlw: {
-      "area": "从事职务",
-      "areaPlaceholder": "（如：全职月嫂）",
-      "money": '职位工资：',
-      "moneyPlaceholder": "（如：2000元/月）",
-      "descript": '详细描述',
-      "descriptPlaceholder": "（如：全天照顾孩子，可住家。有健康证，会做月子餐等。）",
-      "phonePlaceholder": "请输入联系电话",
-      "phone": "联系电话"
-    },
-    hljy: {
-      "area": "信息标题：",
-      "areaPlaceholder": "（如：找女朋友）",
-      "money": '目前月薪：',
-      "moneyPlaceholder": "（如：6000元）",
-      "descript": '信息描述：',
-      "descriptPlaceholder": "（如：三门峡本地人，当过兵。身高180cm,体重65Kg，长得贼帅。)",
-      "phonePlaceholder": "请输入联系电话",
-      "phone": "联系电话"
-
-    },
-    nfcp: {
-      "area": "产品名称：",
-      "areaPlaceholder": "（如：小麦1000斤）",
-      "money": '产品售价：',
-      "moneyPlaceholder": "（如：11元/斤）",
-      "descript": '详细描述',
-      "descriptPlaceholder": "（如：请输入农产品信息等。举例：通货水分12分以内，容量780左右，杂志6%以内)",
-      "phonePlaceholder": "请输入联系电话",
-      "phone": "联系电话"
-    },
-    wyqz: {
-      "area": "求助标题：",
-      "areaPlaceholder": "（如：代办营业执照）",
-      "descript": '求助描述',
-      "descriptPlaceholder": "（如：有没有代办营业执照的？跟我联系下。微信：xxx)",
       "phonePlaceholder": "请输入联系电话",
       "phone": "联系电话"
     },
@@ -242,9 +190,9 @@ Page({
     switch (that.data.cartid) {
       case 1:
         that.setData({
-          showMoneyBox: true,
+          showMoneyBox: false,
           showAreaBox: false,
-          showInfo: that.data.spzz
+          showInfo: that.data.ylys
         })
         break;
       case 2:
@@ -292,34 +240,6 @@ Page({
       case 8:
         that.setData({
           showMoneyBox: true,
-          showAreaBox: false,
-          showInfo: that.data.hljy
-        })
-        break;
-      case 9:
-        that.setData({
-          showMoneyBox: true,
-          showAreaBox: false,
-          showInfo: that.data.jzlw
-        })
-        break;
-      case 10:
-        that.setData({
-          showMoneyBox: false,
-          showAreaBox: false,
-          showInfo: that.data.wyqz
-        })
-        break;
-      case 11:
-        that.setData({
-          showMoneyBox: true,
-          showAreaBox: false,
-          showInfo: that.data.nfcp
-        })
-        break;
-      case 12:
-        that.setData({
-          showMoneyBox: false,
           showAreaBox: false,
           showInfo: that.data.zhxx
         })
@@ -387,9 +307,9 @@ Page({
         switch (res.data.tid) {
           case '1':
             that.setData({
-              showMoneyBox: true,
+              showMoneyBox: false,
               showAreaBox: false,
-              showInfo: that.data.spzz
+              showInfo: that.data.ylys
             })
             break;
           case '2':
@@ -437,34 +357,6 @@ Page({
           case '8':
             that.setData({
               showMoneyBox: true,
-              showAreaBox: false,
-              showInfo: that.data.hljy
-            })
-            break;
-          case '9':
-            that.setData({
-              showMoneyBox: true,
-              showAreaBox: false,
-              showInfo: that.data.jzlw
-            })
-            break;
-          case '10':
-            that.setData({
-              showMoneyBox: false,
-              showAreaBox: false,
-              showInfo: that.data.wyqz
-            })
-            break;
-          case '11':
-            that.setData({
-              showMoneyBox: true,
-              showAreaBox: false,
-              showInfo: that.data.nfcp
-            })
-            break;
-          case '12':
-            that.setData({
-              showMoneyBox: false,
               showAreaBox: false,
               showInfo: that.data.zhxx
             })

@@ -7,6 +7,7 @@
     "pages/publish/publishDetail/publishDetail",
     "pages/new/new",
     "pages/my/my",
+    "pages/write/write",
     "pages/edit/edit",
     "pages/editDetail/editDetail"
   ],
@@ -25,19 +26,26 @@
       {
         "iconPath": "images\/58b91382af5ce.png",
         "selectedIconPath": "images\/58b91382af631.png",
-        "text": "首页",
+        "text": "头页",
         "pagePath": "pages/index/index"
       },
+      
       {
         "iconPath": "images\/58b91382c80c2.png",
         "selectedIconPath": "images\/58b91382c811f.png",
-        "text": "我要发布",
+        "text": "发点信息",
         "pagePath": "pages/publish/publish"
+      },
+      {
+        "iconPath": "images\/index_s1.png",
+        "selectedIconPath": "images\/index_s2.png",
+        "text": "说点 Ser",
+        "pagePath": "pages/write/write"
       },
       {
         "iconPath": "images/account.png",
         "selectedIconPath": "images/accountAct.png",
-        "text": "个人中心",
+        "text": "恰乃",
         "pagePath": "pages/my/my"
       }
     ]

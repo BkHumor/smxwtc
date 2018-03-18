@@ -2,78 +2,30 @@
 var request = require('../../utils/request.js');
 
 var app = getApp();
+var ctx = null;
+var factor = {
+  speed: .008,  // 运动速度，值越小越慢
+  t: 0    //  贝塞尔函数系数
+};
+
+
+var timer = null;  // 循环定时器
 Page({
   data: {
+    style_img: '',
     imgUrls:[],
-    pic1: [
-      {
-        "id": 1,
-        "name": '旺铺转租',
-        "pic": '../../images/serPic1.png',
-      },
-      {
-        "id": 2,
-        "name": '房屋租售',
-        "pic": '../../images/serPic2.png',
-      },
-      {
-        "id": 3,
-        "name": '招聘求职',
-        "pic": '../../images/serPic3.png',
-      },
-      {
-        "id": 4,
-        "name": '宠物之家',
-        "pic": '../../images/serPic4.png',
-      },
-      
-    ],
-    pic2:[
-      {
-        "id": 5,
-        "name": '拼车出行',
-        "pic": '../../images/serPic5.png',
-      },
-      {
-        "id": 6,
-        "name": '二手物品',
-        "pic": '../../images/serPic6.png'
-      },
-      {
-        "id": 7,
-        "name": '教育辅导',
-        "pic": '../../images/serPic7.png'
-      },
-      {
-        "id": 8,
-        "name": '婚恋交友',
-        "pic": '../../images/serPic8.png'
-      },
-    ],
-    pic3: [
-      {
-        "id": 9,
-        "name": '家政劳务',
-        "pic": '../../images/serPic9.png',
-      },
-      {
-        "id": 10,
-        "name": '我要求助',
-        "pic": '../../images/serPic10.png'
-      },
-      {
-        "id": 11,
-        "name": '农副产品',
-        "pic": '../../images/serPic11.png',
-      },
-      {
-        "id": 12,
-        "name": '其他',
-        "pic": '../../images/serPic12.png'
-      },
+    firstpage: [
+      { id: 1, tname: "娱乐饮食", pic: "../../images/serPic1.png" },
+      { id: 2, tname: "房屋租售", pic: "../../images/serPic2.png" },
+      { id: 3, tname: "招聘求职", pic: "../../images/serPic3.png" },
+      { id: 4, tname: "宠物之家", pic: "../../images/serPic4.png" }],
+    secondpage:[
+      { id: 5, tname: "拼车出行", pic: "../../images/serPic5.png" },
+      { id: 6, tname: "二手交易", pic: "../../images/serPic6.png" },
+      { id: 7, tname: "教育辅导", pic: "../../images/serPic7.png" },
+      { id: 8, tname: "本地服务", pic: "../../images/serPic8.png" }
     ]
-  
-  },
+    },
   onShareAppMessage: function () {
     return {
       success: function (res) {
@@ -99,6 +51,7 @@ Page({
         app.getUserInfo();
       }
     });
+    
     console.log(e.title)
     this.setData({
       msgList: [
@@ -106,7 +59,115 @@ Page({
         { url: "url", title: "公告：悦如公寓三周年生日趴邀你免费吃喝欢唱" },
         { url: "url", title: "公告：你想和一群有志青年一起过生日嘛？" }]
     });
+
   },
+  onUnload: function () {
+    if (timer != null) {
+      cancelAnimationFrame(timer);
+    }
+
+  },
+  drawImage: function (data) {
+    var that = this
+    var p10 = data[0][0];   // 三阶贝塞尔曲线起点坐标值
+    var p11 = data[0][1];   // 三阶贝塞尔曲线第一个控制点坐标值
+    var p12 = data[0][2];   // 三阶贝塞尔曲线第二个控制点坐标值
+    var p13 = data[0][3];   // 三阶贝塞尔曲线终点坐标值
+
+    var p20 = data[1][0];
+    var p21 = data[1][1];
+    var p22 = data[1][2];
+    var p23 = data[1][3];
+
+    var p30 = data[2][0];
+    var p31 = data[2][1];
+    var p32 = data[2][2];
+    var p33 = data[2][3];
+
+    var t = factor.t;
+
+    /*计算多项式系数 （下同）*/
+    var cx1 = 3 * (p11.x - p10.x);
+    var bx1 = 3 * (p12.x - p11.x) - cx1;
+    var ax1 = p13.x - p10.x - cx1 - bx1;
+
+    var cy1 = 3 * (p11.y - p10.y);
+    var by1 = 3 * (p12.y - p11.y) - cy1;
+    var ay1 = p13.y - p10.y - cy1 - by1;
+
+    var xt1 = ax1 * (t * t * t) + bx1 * (t * t) + cx1 * t + p10.x;
+    var yt1 = ay1 * (t * t * t) + by1 * (t * t) + cy1 * t + p10.y;
+
+    /** ---------------------------------------- */
+    var cx2 = 3 * (p21.x - p20.x);
+    var bx2 = 3 * (p22.x - p21.x) - cx2;
+    var ax2 = p23.x - p20.x - cx2 - bx2;
+
+    var cy2 = 3 * (p21.y - p20.y);
+    var by2 = 3 * (p22.y - p21.y) - cy2;
+    var ay2 = p23.y - p20.y - cy2 - by2;
+
+    var xt2 = ax2 * (t * t * t) + bx2 * (t * t) + cx2 * t + p20.x;
+    var yt2 = ay2 * (t * t * t) + by2 * (t * t) + cy2 * t + p20.y;
+
+
+    /** ---------------------------------------- */
+    var cx3 = 3 * (p31.x - p30.x);
+    var bx3 = 3 * (p32.x - p31.x) - cx3;
+    var ax3 = p33.x - p30.x - cx3 - bx3;
+
+    var cy3 = 3 * (p31.y - p30.y);
+    var by3 = 3 * (p32.y - p31.y) - cy3;
+    var ay3 = p33.y - p30.y - cy3 - by3;
+
+    /*计算xt yt的值 */
+    var xt3 = ax3 * (t * t * t) + bx3 * (t * t) + cx3 * t + p30.x;
+    var yt3 = ay3 * (t * t * t) + by3 * (t * t) + cy3 * t + p30.y;
+    factor.t += factor.speed;
+    ctx.drawImage("../../images/heart1.png", xt1, yt1, 30, 30);
+    ctx.drawImage("../../images/heart2.png", xt2, yt2, 30, 30);
+    ctx.drawImage("../../images/heart3.png", xt3, yt3, 30, 30);
+    ctx.draw();
+    if (factor.t > 1) {
+      factor.t = 0;
+      cancelAnimationFrame(timer);
+      that.startTimer();
+    } else {
+      timer = requestAnimationFrame(function () {
+        that.drawImage([[{ x: 30, y: 400 }, { x: 70, y: 300 }, { x: -50, y: 150 }, { x: 30, y: 0 }], [{ x: 30, y: 400 }, { x: 30, y: 300 }, { x: 80, y: 150 }, { x: 30, y: 0 }], [{ x: 30, y: 400 }, { x: 0, y: 90 }, { x: 80, y: 100 }, { x: 30, y: 0 }]])
+      })
+    }
+
+
+  },
+
+
+  onClickImage: function (e) {
+    var that = this
+    that.setData({
+      style_img: 'transform:scale(1.3);'
+    })
+    setTimeout(function () {
+      that.setData({
+        style_img: 'transform:scale(1);'
+      })
+    }, 500)
+  },
+
+  startTimer: function () {
+    var that = this
+    that.setData({
+      style_img: 'transform:scale(1.3);'
+    })
+    setTimeout(function () {
+      that.setData({
+        style_img: 'transform:scale(1);'
+      })
+    }, 500)
+    that.drawImage([[{ x: 30, y: 400 }, { x: 70, y: 300 }, { x: -50, y: 150 }, { x: 30, y: 0 }], [{ x: 30, y: 400 }, { x: 30, y: 300 }, { x: 80, y: 150 }, { x: 30, y: 0 }], [{ x: 30, y: 400 }, { x: 0, y: 90 }, { x: 80, y: 100 }, { x: 30, y: 0 }]])
+
+  },
+
   onReady: function () {
     // 页面渲染完成
   },
@@ -122,15 +183,18 @@ Page({
         })
       },
     );
-    request.getQupic(
+    //号友动态
+    request.sayIndexNew(
       { "session_id": app.globalData.session_id },
       (res) => {
-        console.log(res+"0000000000000000000");
+        console.log(res);
         that.setData({
-          funnyPic: res.data
+          list: res.data
         })
       },
-    )
+    );
+
+
   },
   onHide: function () {
     // 页面隐藏

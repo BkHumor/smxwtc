@@ -1,4 +1,4 @@
-
+<import src="../template/list.wxml" />
 <!--首页轮播图开始-->
 <swiper indicator-dots="true" autoplay="true" circular="true" style="height:165px;">
   <block wx:for="{{imgUrls}}" wx:key="item">
@@ -11,6 +11,7 @@
 <view class="lineBg"></view>
 <!--公告开始  -->
 <view class="">
+
 <swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="2000">
     <block wx:for="{{msgList}}">
       <navigator url="/pages/index/index?title={{item.url}}" open-type="navigate">
@@ -26,43 +27,47 @@
 <!--快速入口开始-->
 
 <view class="body type_box">
-  <block wx:for="{{pic1}}" wx:key="item">
+ <block wx:for="{{firstpage}}" wx:key="item">
     <view class="body_item" data-id="{{item.id}}" bindtap="goDetail">
       <image class="body_pic" src="{{item.pic}}"></image>
-      <view class="body_name">{{item.name}}</view>
+      <view class="body_name">{{item.tname}}</view>
     </view>
   </block>
 </view>
 <view class="body" style="padding-top:0rpx;padding-bottom:20rpx;">
-  <block wx:for="{{pic2}}" wx:key="item">
+  <block wx:for="{{secondpage}}" wx:key="item">
     <view class="body_item" data-id="{{item.id}}" bindtap="goDetail">
       <image class="body_pic" src="{{item.pic}}"></image>
-      <view class="body_name">{{item.name}}</view>
+      <view class="body_name">{{item.tname}}</view>
     </view>
   </block>
 </view>
-<view class="body" style="padding-top:0rpx;padding-bottom:20rpx;">
-  <block wx:for="{{pic3}}" wx:key="item">
-    <view class="body_item" data-id="{{item.id}}" bindtap="goDetail">
-      <image class="body_pic" src="{{item.pic}}"></image>
-      <view class="body_name">{{item.name}}</view>
-    </view>
-  </block>
-</view>
-
 <!--快速入口结束-->
 <view class="lineBg"></view>
 <!--商家活动开始-->
 <view class="activity">
-    <text>三门峡方言动态</text>
+    <text>号友动态</text>
 </view> 
-<view class="ele-container">
-  <block wx:for="{{funnyPic}}" wx:key="item">
-    <view class="funny_item" data-id="{{item.id}}">
-      <image class="funny_pic" src="{{item.pic}}"></image>
-      <view class="funny_name">{{item.title}}</view>
+<view class="index_list">
+  <navigator class="index_list_nav" url="" hover-class="navigator-hover" wx:for="{{list}}" wx:key="item">
+    <template is="listHeader" data="{{userPic:item.pic,userNick:item.nickname,publishTime:item.addtime}}" />
+    <template is="listTemp" data="{{listPic:item.pic_list[0].filename,listContent:item.descript}}" />
+    <view class="list_footer">
+      <!-- <view class="agreeNum agree_{{item.likes}}">{{item.likes}}</view> -->
+    <view>
+    <view class="v-canvas">
+    <canvas canvas-id="canvas_wi" style="{{canvas_style}}" class="myCanvas"/>
     </view>
-  </block>
+    <view class="v-img">
+        <image src="../../images/heart_button.png" class="bt-img" bindtap="onClickImage" style="{{style_img}}width:28px;height:25px;"></image>
+    </view>
+    </view>
+      
+      <view class="commNum"><image src="https://www.smxwtc.club/view/img/ping.png"></image>{{item.posts}}</view>
+      <view class="agree_{{item.likes}}" wx:if="{{item.likes == 0}}" > <image src="https://www.smxwtc.club/view/img/zan0.png"  bindtap='onClickImage'></image>1</view>
+      <view class="agree_{{item.likes}}" wx:else> <image src="https://www.smxwtc.club/view/img/zan1.png"></image>1</view>
+    </view>
+  </navigator>
 </view>
 
 <!--商家活动结束-->

@@ -3,13 +3,15 @@
 <view class="wrap">
   <view class="app">
     <view class="ele-container">
-      <image class="show-bac" src="../../images/bg1.png"></image>
+      <image class="show-bac" src="../../images/bg_2.png"></image>
       <view class="user-center usercenter-mode1 background-ele with-horizontal-view show-logo">
         <view class="show-view">
           <image class="cover-thumb" src="{{list.pic}}"></image>
-          <view class="nickname">{{list.nickname}}</view>
+         <view class="nickname"> {{list.nickname}}  <image class="sex" src="{{list.sex}}"></image></view>
+         <view class="p_user_info"><text class="user_info_num">33.6w </text>获赞　　　<text class="user_info_num">8 </text>关注　　　<text class="user_info_num">1.8w </text>粉丝</view><view></view>
         </view>
       </view>
+     
     </view>
   </view>
   
@@ -17,7 +19,7 @@
         <navigator url="../edit/edit" class="weui-cell weui-cell_access" style="line-height:88rpx;font-size:36rpx;" hover-class="weui-cell_active">
           <view class="weui-cell__bd">
             <image src="../../images/feiji.png" class="feiji_icon"></image>
-            <text class="feiji_word">我发布的</text>
+            <text class="feiji_word">发乃</text>
           </view>
           <view class="weui-cell__ft weui-cell__ft_in-access"></view>
         </navigator>
@@ -25,14 +27,21 @@
                 <navigator url="../edit/edit" class="weui-cell weui-cell_access" style="line-height:88rpx;font-size:36rpx;" hover-class="weui-cell_active">
           <view class="weui-cell__bd">
             <image src="../../images/shuo.png" class="shuo_icon"></image>
-            <text class="shuo_word">我说过的</text>
+            <text class="shuo_word">说乃</text>
           </view>
           <view class="weui-cell__ft weui-cell__ft_in-access"></view>
            </navigator>
                 <navigator url="../edit/edit" class="weui-cell weui-cell_access" style="line-height:88rpx;font-size:36rpx;" hover-class="weui-cell_active">
           <view class="weui-cell__bd">
             <image src="../../images/ping.png" class="ping_icon"></image>
-            <text class="ping_word">我的评论</text>
+            <text class="ping_word">评恰乃</text>
+          </view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+          </navigator>
+           <navigator url="../edit/edit" class="weui-cell weui-cell_access" style="line-height:88rpx;font-size:36rpx;" hover-class="weui-cell_active">
+          <view class="weui-cell__bd">
+            <image src="../../images/zan.png" class="ping_icon"></image>
+            <text class="ping_word">赞恰乃</text>
           </view>
           <view class="weui-cell__ft weui-cell__ft_in-access"></view>
           </navigator>

@@ -63,14 +63,15 @@
 .app .user-center .show-view .cover-thumb {
   width: 123rpx;
   height: 123rpx;
-  margin-top: 91rpx;
+  margin-top: 40rpx;
   border-radius: 50%;
   vertical-align: middle;
 }
 
 .app .user-center .show-view .nickname {
   vertical-align: middle;
-  margin-top: 20rpx;
+  margin-top: 10px;
+  margin-bottom: 15px;
   color: rgb(255, 255, 255);
   font-family:"PingFangSC-Regular","sans-serif","STHeitiSC-Light","微软雅黑","Microsoft YaHei";
   font-size: 30rpx;
@@ -155,6 +156,19 @@ Page {
    font-size: 30rpx;
    color:rgb(0, 0, 0);
    margin-left:12rpx ;
+}
+.sex {
+  width:16px;
+height:16px;
+display:inline-block;
+}
+.user_info_num {
+  font-size: 35rpx;
+  font-weight: bold;
+  color:white;
+}
+.p_user_info {
+  color:white;
 }
 .about{
    padding:40rpx 30rpx;

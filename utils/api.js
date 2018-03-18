@@ -103,6 +103,27 @@ const v20 = 'user-get_map.htm';
 function getMapList() {
   return api + v20;
 };
+//添加说说
+const v21 = 'say-add.htm';
+function addSay() {
+  return api + v21;
+}
+
+//删除说说
+const v22 = 'say-del.htm';
+function delSay() {
+  return api + v22;
+}
+//说说图片
+const v23 = 'say-upload_pic.htm';
+function addSayPic() {
+  return api + v23;
+};
+//前五条
+const v24 = 'say-index_new.htm';
+function sayIndexNew() {
+  return api + v24;
+}
 module.exports = {
   login: login,
   getBanner: getBanner,
@@ -123,5 +144,9 @@ module.exports = {
   editNotice: editNotice,
   getTname: getTname,
   getAname: getAname,
-  getMapList: getMapList
+  getMapList: getMapList,
+  addSay: addSay,
+  addSayPic:addSayPic,
+  delSay: delSay,
+  sayIndexNew: sayIndexNew
 };

@@ -119,6 +119,22 @@ function getMapList(data, successCallback, errorCallback) {
   requestData(api.getMapList(), data, successCallback, errorCallback);
 }
 
+//说说
+function addSay(data, successCallback, errorCallback) {
+  requestData(api.addSay(), data, successCallback, errorCallback);
+}
+
+function delSay(data, successCallback, errorCallback) {
+  requestData(api.sayDel(), data, successCallback, errorCallback);
+}
+
+function addSayPic(data, imageList, successCallback, errorCallback) {
+  requestDataPic(api.addSayPic(), data, imageList, successCallback, errorCallback);
+}
+
+function sayIndexNew(data,successCallback, errorCallback) {
+  requestData(api.sayIndexNew(), data, successCallback, errorCallback);
+}
 module.exports = {
     login: login,
     getBanner: getBanner,
@@ -139,5 +155,9 @@ module.exports = {
     editNotice: editNotice,
     getTname: getTname,
     getAname: getAname,
-    getMapList: getMapList
+    getMapList: getMapList,
+    addSay: addSay,
+    delSay: delSay,
+    addSayPic: addSayPic,
+    sayIndexNew:sayIndexNew
 };

@@ -1,0 +1,25 @@
+<loading hidden="{{loading}}">
+  页面初始化中...
+</loading>
+<form bindsubmit="sendNewMood" >
+    <view class="addConent">
+        <textarea  placeholder="美美门儿给恰说两句…" maxlength="1000"  value="" name="content"/>
+    </view>
+    <view class="add_pic" bindtap="uploadPic" wx-if="{{!isSrc}}">
+        <view>添加图片</view>
+    </view>
+    <view wx:if="{{isSrc}}" class="image_box">
+        <view  class="picPre">
+            <image src="{{src}}"  mode="aspectFill"></image>
+            <view bindtap="clearPic"></view>
+        </view>
+    </view>
+
+          <view class="group_top shop_desc_input group_line" bindtap="goMap">
+              <image src="../../../images/address2.png" class="addr_icon"></image>
+              <input class="addr_word"  auto-height  value="{{location}}" placeholder="你在哪嗒类？"/> 
+              <image src="../../../images/arrowright.png" class="arrow_icon"></image>
+          </view>
+    <button loading="{{isLoading}}" hover-
+    start-time="200" disabled="{{isdisabled}}" formType="submit">说出起</button>
+    </form>
