@@ -150,8 +150,8 @@
 .list_footer {
   float: right;
   overflow: hidden;
-  height: 60rpx;
-  line-height: 81rpx;
+  height:120rpx;
+  line-height:190rpx;
   margin-top: -8px;
 }
   
@@ -165,7 +165,7 @@
 }   
 
 .agree_1 image, .commNum image {
-  width: 25px;
+  width: 27px;
   height: 25px;
 }
 .agree_0 image {

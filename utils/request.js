@@ -135,6 +135,10 @@ function addSayPic(data, imageList, successCallback, errorCallback) {
 function sayIndexNew(data,successCallback, errorCallback) {
   requestData(api.sayIndexNew(), data, successCallback, errorCallback);
 }
+function userLike(data, successCallback, errorCallback) {
+  requestData(api.userLike(), data, successCallback, errorCallback);
+}
+
 module.exports = {
     login: login,
     getBanner: getBanner,
@@ -159,5 +163,6 @@ module.exports = {
     addSay: addSay,
     delSay: delSay,
     addSayPic: addSayPic,
-    sayIndexNew:sayIndexNew
+    sayIndexNew:sayIndexNew,
+    userLike: userLike
 };

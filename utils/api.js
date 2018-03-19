@@ -124,6 +124,12 @@ const v24 = 'say-index_new.htm';
 function sayIndexNew() {
   return api + v24;
 }
+//点赞
+const v25 = 'user-like.htm';
+function userLike() {
+  return api + v25;
+}
+
 module.exports = {
   login: login,
   getBanner: getBanner,
@@ -148,5 +154,6 @@ module.exports = {
   addSay: addSay,
   addSayPic:addSayPic,
   delSay: delSay,
-  sayIndexNew: sayIndexNew
+  sayIndexNew: sayIndexNew,
+  userLike: userLike
 };

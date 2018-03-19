@@ -131,8 +131,8 @@ Page({
     if (factor.t > 1) {
       factor.t = 0;
       cancelAnimationFrame(timer);
-      that.startTimer();
-    } else {
+      ctx.draw();
+     } else {
       timer = requestAnimationFrame(function () {
         that.drawImage([[{ x: 30, y: 400 }, { x: 70, y: 300 }, { x: -50, y: 150 }, { x: 30, y: 0 }], [{ x: 30, y: 400 }, { x: 30, y: 300 }, { x: 80, y: 150 }, { x: 30, y: 0 }], [{ x: 30, y: 400 }, { x: 0, y: 90 }, { x: 80, y: 100 }, { x: 30, y: 0 }]])
       })
@@ -143,15 +143,33 @@ Page({
 
 
   onClickImage: function (e) {
-    var that = this
+    ctx = wx.createCanvasContext('canvas_wi')
+    this.startTimer();
+    var that = this;
     that.setData({
       style_img: 'transform:scale(1.3);'
     })
-    setTimeout(function () {
-      that.setData({
-        style_img: 'transform:scale(1);'
-      })
-    }, 500)
+    console.log(e);
+    var _uid =e.currentTarget.dataset.uid
+    var _id = e.currentTarget.id;
+    var _index = e.currentTarget.dataset.index;
+    console.log(_index);
+    request.userLike(
+      {"sid": _id, "touid": _uid, "session_id": app.globalData.session_id},
+      (res) => {
+        console.log(res);
+        //成功后的处理。
+        var _list = 'list['+_index+'].likes';
+        if(res.data.code == 200){
+          that.setData({
+            [_list]: 1
+          });
+          console.log([_list]);
+        }
+        
+      }
+    );
+
   },
 
   startTimer: function () {
@@ -159,11 +177,11 @@ Page({
     that.setData({
       style_img: 'transform:scale(1.3);'
     })
-    setTimeout(function () {
-      that.setData({
-        style_img: 'transform:scale(1);'
-      })
-    }, 500)
+    // setTimeout(function () {
+    //   that.setData({
+    //     style_img: 'transform:scale(1);'
+    //   })
+    // }, 500)
     that.drawImage([[{ x: 30, y: 400 }, { x: 70, y: 300 }, { x: -50, y: 150 }, { x: 30, y: 0 }], [{ x: 30, y: 400 }, { x: 30, y: 300 }, { x: 80, y: 150 }, { x: 30, y: 0 }], [{ x: 30, y: 400 }, { x: 0, y: 90 }, { x: 80, y: 100 }, { x: 30, y: 0 }]])
 
   },
