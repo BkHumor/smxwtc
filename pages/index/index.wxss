@@ -159,7 +159,7 @@
   float: left;
   padding-left: 44rpx;
   padding-right: 16rpx;
-  
+  margin-top:4px;
   background-size: 44rpx auto;
   color: #999;
 }   
@@ -190,7 +190,7 @@
 
 .v-img{
   position: fixed;
-  right: 45px;
+  right: 30px;
   bottom: 30px;
 }
 
