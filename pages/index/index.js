@@ -1,6 +1,5 @@
 // pages/index/index.js
 var request = require('../../utils/request.js');
-
 var app = getApp();
 var ctx = null;
 var factor = {
@@ -51,14 +50,52 @@ Page({
         app.getUserInfo();
       }
     });
+    //号友动态
+      if (app.globalData.session_id && app.globalData.session_id != '') {
+        request.sayIndexNew(
+          { "session_id": app.globalData.session_id },
+          (res) => {
+            console.log(res);
+            var datalist = res.data;
+            datalist.forEach((item) => {
+              item.address = item.address.length > 12 ? item.address.substring(0, 12) + '…' : item.address; //要截取字段的字符串
+            })
+            console.log(datalist);
+            this.setData({
+              list: datalist
+            })
+          },
+        );
+      } else {
+        // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+        // 所以此处加入 callback 以防止这种情况
+        app.session_idCallback = session_id => {
+          if (session_id != '') {
+            request.sayIndexNew(
+              { "session_id": app.globalData.session_id },
+              (res) => {
+                console.log(res);
+                var datalist = res.data;
+                datalist.forEach((item) => {
+                  item.address = item.address.length > 12 ? item.address.substring(0, 12) + '…' : item.address; //要截取字段的字符串
+                })
+                this.setData({
+                  list: res.data
+                })
+              },
+            );
+          }
+        }
+      }
     
-    console.log(e.title)
+   
     this.setData({
       msgList: [
         { url: "url", title: "公告：多地首套房贷利率上浮 热点城市渐迎零折扣时代" },
         { url: "url", title: "公告：悦如公寓三周年生日趴邀你免费吃喝欢唱" },
         { url: "url", title: "公告：你想和一群有志青年一起过生日嘛？" }]
     });
+
 
   },
   onUnload: function () {
@@ -124,15 +161,16 @@ Page({
     var xt3 = ax3 * (t * t * t) + bx3 * (t * t) + cx3 * t + p30.x;
     var yt3 = ay3 * (t * t * t) + by3 * (t * t) + cy3 * t + p30.y;
     factor.t += factor.speed;
-    ctx.drawImage("../../images/heart1.png", xt1, yt1, 30, 30);
-    ctx.drawImage("../../images/heart2.png", xt2, yt2, 30, 30);
-    ctx.drawImage("../../images/heart3.png", xt3, yt3, 30, 30);
+    ctx.drawImage("https://www.smxwtc.club/view/img/heart1.png", xt1, yt1, 30, 30);
+    ctx.drawImage("https://www.smxwtc.club/view/img/heart2.png", xt2, yt2, 30, 30);
+    ctx.drawImage("https://www.smxwtc.club/view/img/heart3.png", xt3, yt3, 30, 30);
     ctx.draw();
     if (factor.t > 1) {
       factor.t = 0;
       cancelAnimationFrame(timer);
       ctx.draw();
      } else {
+     
       timer = requestAnimationFrame(function () {
         that.drawImage([[{ x: 30, y: 400 }, { x: 70, y: 300 }, { x: -50, y: 150 }, { x: 30, y: 0 }], [{ x: 30, y: 400 }, { x: 30, y: 300 }, { x: 80, y: 150 }, { x: 30, y: 0 }], [{ x: 30, y: 400 }, { x: 0, y: 90 }, { x: 80, y: 100 }, { x: 30, y: 0 }]])
       })
@@ -153,22 +191,28 @@ Page({
     var _uid =e.currentTarget.dataset.uid
     var _id = e.currentTarget.id;
     var _index = e.currentTarget.dataset.index;
-    console.log(_index);
-    request.userLike(
-      {"sid": _id, "touid": _uid, "session_id": app.globalData.session_id},
-      (res) => {
-        console.log(res);
-        //成功后的处理。
-        var _list = 'list['+_index+'].likes';
-        if(res.data.code == 200){
-          that.setData({
-            [_list]: 1
-          });
-          console.log([_list]);
+    if(that.data.list[_index].islike == 0) {
+      request.userLike(
+        {"sid": _id, "touid": _uid, "session_id": app.globalData.session_id},
+        (res) => {
+          console.log(res);
+          //成功后的处理。
+          var _listislike = 'list['+_index+'].islike';
+          var _listlikes = 'list[' + _index + '].likes';
+          
+          if(res.data.code == 200){
+            that.setData({
+              [_listislike]: 1,
+              [_listlikes]: parseInt(that.data.list[_index].likes)+1
+            });
+          
+          }
+          
         }
-        
-      }
-    );
+      );
+    } else {
+      return;
+    }
 
   },
 
@@ -201,25 +245,14 @@ Page({
         })
       },
     );
-    //号友动态
-    request.sayIndexNew(
-      { "session_id": app.globalData.session_id },
-      (res) => {
-        console.log(res);
-        that.setData({
-          list: res.data
-        })
-      },
-    );
+
 
 
   },
   onHide: function () {
     // 页面隐藏
   },
-  onUnload: function () {
-    // 页面关闭
-  },
+
   goDetail: function (e) {
     wx.navigateTo({
       url: '../detail/detail?id=' + e.currentTarget.dataset.id

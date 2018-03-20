@@ -21,8 +21,6 @@ App({
     wx.login({
       success: function (res) {
       console.log(res);
-
-
         if (res.code) {
           //发起网络请求
           request.login(
@@ -33,11 +31,9 @@ App({
               console.log(res);
               var session_id = res.data.session_id;
               that.globalData.session_id = res.data.session_id;
+              
               wx.getUserInfo({
                 success: function (res) {
-                  console.log(11111);
-                  console.log(res);
-
                   request.checkLogin(
                     {
                       'iv': res.iv,
@@ -49,6 +45,9 @@ App({
                   )
                 }
               })
+              if(that.session_idCallback) {
+                that.session_idCallback(session_id);
+              }
             }
           )
         } else {
@@ -58,6 +57,7 @@ App({
     });
   },
   globalData: {
+    session_id:''
   }
 })
 

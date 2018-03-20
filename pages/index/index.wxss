@@ -18,6 +18,8 @@
     flex-direction: column;
     justify-content: center;
     width: 112rpx;
+    z-index:1;
+
 }
 .body_pic{
     width: 96rpx;
@@ -148,22 +150,27 @@
   max-height: 36px;
 }
 .list_footer {
-  float: right;
   overflow: hidden;
   height:120rpx;
   line-height:190rpx;
   margin-top: -8px;
 }
   
- .list_footer view {
-  float: left;
+ .list_footer .h_canvas{
+  float: right;
   padding-left: 44rpx;
   padding-right: 16rpx;
   margin-top:4px;
   background-size: 44rpx auto;
   color: #999;
 }   
-
+.agree_1, .commNum,.agree_0 {
+  float:right;
+  
+}
+.commNum {
+  margin-right : 20px;
+}
 .agree_1 image, .commNum image {
   width: 27px;
   height: 25px;
@@ -206,4 +213,21 @@
   -moz-transition-duration:700ms;
   transition-duration:700ms;
   
+}
+.addr_icon{
+   width: 23rpx;
+  height: 23rpx;
+  vertical-align: middle;
+  margin-left: 40rpx;
+}
+.addr_info{
+  line-height: 24rpx;
+  height: 24rpx;
+  margin-left: 10rpx;
+  font-family:"PingFangSC-Regular","sans-serif","STHeitiSC-Light","微软雅黑","Microsoft YaHei";
+  font-size: 24rpx;
+  color:lightblue;
+}
+.hidden{
+  display: none;
 }

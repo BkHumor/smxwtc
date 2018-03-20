@@ -16,9 +16,9 @@
     </view>
 
           <view class="group_top shop_desc_input group_line" bindtap="goMap">
-              <image src="../../../images/address2.png" class="addr_icon"></image>
+              <image src="https://www.smxwtc.club/view/img/address2.png" class="addr_icon"></image>
               <input class="addr_word"  auto-height  value="{{location}}" placeholder="你在哪嗒类？"/> 
-              <image src="../../../images/arrowright.png" class="arrow_icon"></image>
+              <image src="https://www.smxwtc.club/view/img/arrowright.png" class="arrow_icon"></image>
           </view>
     <button loading="{{isLoading}}" hover-
     start-time="200" disabled="{{isdisabled}}" formType="submit">说出起</button>

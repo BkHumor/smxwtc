@@ -31,11 +31,7 @@ function isPhoneNumber(num) {
   return /^1\d{10}$/.test(num);
 }
 
-module.exports = {
-  formatTime: formatTime,
-  isPlainObject: isPlainObject,
-  isPhoneNumber: isPhoneNumber
-}
+
 
 
 //截取字符串长度替换--处理title过长的问题
@@ -46,3 +42,9 @@ function cutTitleString(title, start, end) {
   return title;
 }
 
+module.exports = {
+  formatTime: formatTime,
+  isPlainObject: isPlainObject,
+  isPhoneNumber: isPhoneNumber,
+  cutTitleString: cutTitleString
+}
