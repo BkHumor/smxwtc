@@ -192,7 +192,7 @@ Page({
         that.setData({
           showMoneyBox: false,
           showAreaBox: false,
-          showInfo: that.data.ylys
+          showInfo: that.data.zhxx
         })
         break;
       case 2:
@@ -241,7 +241,7 @@ Page({
         that.setData({
           showMoneyBox: true,
           showAreaBox: false,
-          showInfo: that.data.zhxx
+          showInfo: that.data.ylys
         })
         break;
     }
@@ -309,7 +309,7 @@ Page({
             that.setData({
               showMoneyBox: false,
               showAreaBox: false,
-              showInfo: that.data.ylys
+              showInfo: that.data.zhxx
             })
             break;
           case '2':
@@ -358,7 +358,7 @@ Page({
             that.setData({
               showMoneyBox: true,
               showAreaBox: false,
-              showInfo: that.data.zhxx
+              showInfo: that.data.ylys
             })
             break;
         }

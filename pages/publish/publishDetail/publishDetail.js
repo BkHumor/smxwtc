@@ -236,7 +236,7 @@ Page({
     //显示所选中的信息
     //选择数据
     switch (that.data.cartid) {
-        case '1':
+        case '8':
         that.setData({
           showMoneyBox: false,
           showAreaBox: false,
@@ -285,7 +285,7 @@ Page({
           showInfo: that.data.jyfd
         })
         break;
-      case '8':
+      case '1':
         that.setData({
           showMoneyBox: true,
           showAreaBox: false,

@@ -13,16 +13,17 @@ Page({
   data: {
     style_img: '',
     imgUrls:[],
-    firstpage: [
-      { id: 1, tname: "娱乐饮食", pic: "../../images/serPic1.png" },
-      { id: 2, tname: "房屋租售", pic: "../../images/serPic2.png" },
-      { id: 3, tname: "招聘求职", pic: "../../images/serPic3.png" },
-      { id: 4, tname: "宠物之家", pic: "../../images/serPic4.png" }],
-    secondpage:[
-      { id: 5, tname: "拼车出行", pic: "../../images/serPic5.png" },
-      { id: 6, tname: "二手交易", pic: "../../images/serPic6.png" },
-      { id: 7, tname: "教育辅导", pic: "../../images/serPic7.png" },
-      { id: 8, tname: "本地服务", pic: "../../images/serPic8.png" }
+      firstpage:[
+        { id: 1, tname: "全部信息", pic: "../../images/serPic1.png" },
+        { id: 2, tname: "房屋租售", pic: "../../images/serPic2.png" },
+        { id: 3, tname: "招聘求职", pic: "../../images/serPic3.png" },
+        { id: 4, tname: "宠物之家", pic: "../../images/serPic4.png" }],
+      secondpage: [
+        { id: 5, tname: "拼车出行", pic: "../../images/serPic5.png" },
+        { id: 6, tname: "二手交易", pic: "../../images/serPic6.png" },
+        { id: 7, tname: "教育辅导", pic: "../../images/serPic7.png" },
+        { id: 8, tname: "娱乐饮食", pic: "../../images/serPic8.png" }
+   
     ]
     },
   onShareAppMessage: function () {
@@ -161,9 +162,9 @@ Page({
     var xt3 = ax3 * (t * t * t) + bx3 * (t * t) + cx3 * t + p30.x;
     var yt3 = ay3 * (t * t * t) + by3 * (t * t) + cy3 * t + p30.y;
     factor.t += factor.speed;
-    ctx.drawImage("https://www.smxwtc.club/view/img/heart1.png", xt1, yt1, 30, 30);
-    ctx.drawImage("https://www.smxwtc.club/view/img/heart2.png", xt2, yt2, 30, 30);
-    ctx.drawImage("https://www.smxwtc.club/view/img/heart3.png", xt3, yt3, 30, 30);
+    ctx.drawImage("https://www.smxwtc.club/view/img/heart1.png", xt1, yt1, 20, 20);
+    ctx.drawImage("https://www.smxwtc.club/view/img/heart2.png", xt2, yt2, 20, 20);
+    ctx.drawImage("https://www.smxwtc.club/view/img/heart3.png", xt3, yt3, 20, 20);
     ctx.draw();
     if (factor.t > 1) {
       factor.t = 0;
