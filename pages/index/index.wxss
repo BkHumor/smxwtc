@@ -218,7 +218,6 @@
    width: 23rpx;
   height: 23rpx;
   vertical-align: middle;
-  margin-left: 40rpx;
 }
 .addr_info{
   line-height: 24rpx;

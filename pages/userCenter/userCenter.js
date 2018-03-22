@@ -6,21 +6,16 @@ Page({
     userInfo: {
       nickname: '',
       sex: 0,
-      cover_thumb: 'http://img.zhichiwangluo.com/zc_app_default_photo.png'
+      pic: 'https://www.smxwtc.club/view/img/default_avatar.jpg'
     },
-    genderArr: ['男', '女'],
+    genderArr:['男','女'],
     isFromBack: false,
-    phone: ''
+   
   },
   onLoad: function(){
-    var userInfo = app.getUserInfo(),
-       data = {
-              'userInfo.nickname': userInfo.data.nickName,
-              'userInfo.sex': userInfo.data.gender,
-              'userInfo.cover_thumb': userInfo.data.avatarUrl
-            };
-      console.log('sssss'+userInfo);
-    this.setData(data);
+    var userInfo = app.globalData.userInfo;
+    console.log(userInfo);
+    this.setData({userInfo:userInfo});
   },
   onShow: function(){
     if(this.data.isFromBack){
@@ -36,17 +31,25 @@ Page({
       });
     }
   },
-  choosePhoto: function(){
-    var that = this;
-    app.chooseImage(function(imgUrl){
-      that.setData({
-        'userInfo.cover_thumb': imgUrl
-      })
-    });
+  uploadPic: function () {//选择图标
+    wx.chooseImage({
+      count: 1, 
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+      success: function (res) {
+        // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+        var tempFilePaths = res.tempFilePaths
+        that.setData({
+          isSrc: true,
+          src: tempFilePaths
+        })
+      }
+    })
   },
+
   changeGender: function(e){
     this.setData({
-      'userInfo.sex': e.detail.value
+      'userInfo.sex': e.detail.value == 0 ? '男':'女'
     })
   },
   inputNickname: function(e){
@@ -56,18 +59,8 @@ Page({
   },
   saveUserInfo: function(){
     var data = this.data.userInfo;
+    //请求
 
-    app.sendRequest({
-      url: '/index.php?r=AppData/saveUserInfo',
-      method: 'post',
-      data: data,
-      success: function(res){
-        if(res.status === 0){
-          app.setUserInfoStorage(data);
-          app.turnBack();
-        }
-      }
-    });
   },
 
 

@@ -100,9 +100,9 @@ Page({
    
     this.setData({
       msgList: [
-        { url: "url", title: "公告：多地首套房贷利率上浮 热点城市渐迎零折扣时代" },
-        { url: "url", title: "公告：悦如公寓三周年生日趴邀你免费吃喝欢唱" },
-        { url: "url", title: "公告：你想和一群有志青年一起过生日嘛？" }]
+        { url: "url", title: "公告：不能因为长得帅就Ser都不说哦！" },
+        { url: "url", title: "公告：不能因为长得漂亮就不年喘哦！" },
+        { url: "url", title: "公告：说Ser名人排行榜，点击浏览！" }]
     });
 
 

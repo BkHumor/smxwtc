@@ -31,20 +31,13 @@ App({
               console.log(res);
               var session_id = res.data.session_id;
               that.globalData.session_id = res.data.session_id;
-              
-              wx.getUserInfo({
-                success: function (res) {
-                  request.checkLogin(
-                    {
-                      'iv': res.iv,
-                      'encryptedData': res.encryptedData,
-                      'session_id': session_id
-                    }, (res) => {
-                      console.log(res);
-                    }
-                  )
-                }
-              })
+              request.getUser(
+                { "session_id": session_id },
+                (res) => {
+                  that.globalData.userInfo = res.data;
+                 
+                },
+              )
               if(that.session_idCallback) {
                 that.session_idCallback(session_id);
               }
