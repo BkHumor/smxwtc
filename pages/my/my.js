@@ -44,6 +44,11 @@ Page({
   },
   onUnload: function () {
     // 页面关闭
+  },
+  goUcenter: function() {
+    wx.navigateTo({
+      url: '../userCenter/userCenter',
+    })
   }
 })
 

@@ -7,7 +7,15 @@ var factor = {
   t: 0    //  贝塞尔函数系数
 };
 
+wx.showToast({
+  title: '拿劲加载中...',
+  icon: 'loading',
+  duration: 10000
+}),
 
+  setTimeout(function () {
+    wx.hideToast()
+  }, 1500)
 var timer = null;  // 循环定时器
 Page({
   data: {
@@ -105,6 +113,7 @@ Page({
     }
 
   },
+
   drawImage: function (data) {
     var that = this
     var p10 = data[0][0];   // 三阶贝塞尔曲线起点坐标值

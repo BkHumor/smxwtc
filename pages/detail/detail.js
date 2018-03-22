@@ -41,7 +41,7 @@ Page({
         screenWidth = res.windowWidth;
       }
     });
-    tid = options.id;
+    tid = options.id || 1;
     aid = options.aid;
     page = 1;
     var that = this;
@@ -297,8 +297,16 @@ Page({
   },
   //跳转到发布页
   goPub:function(){
-    wx.switchTab({
-      url: '../publish/publish',
+    // wx.switchTab({
+    //   url: '../publish/publish',
+    // })
+    tid = tid == undefined ? 1 : tid;
+    aid = aid == undefined ? 1 : aid;
+    wx.navigateTo({
+      url: '../publish/publishDetail/publishDetail?tid=' + tid + "&aid=" + aid,
     })
   }
+
+
+  
 })

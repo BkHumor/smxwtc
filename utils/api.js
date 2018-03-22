@@ -129,7 +129,11 @@ const v25 = 'user-like.htm';
 function userLike() {
   return api + v25;
 }
-
+//说说列表
+const v26= 'say-list.htm';
+function sayList() {
+  return api + v26;
+}
 module.exports = {
   login: login,
   getBanner: getBanner,
@@ -155,5 +159,6 @@ module.exports = {
   addSayPic:addSayPic,
   delSay: delSay,
   sayIndexNew: sayIndexNew,
-  userLike: userLike
+  userLike: userLike,
+  sayList: sayList
 };

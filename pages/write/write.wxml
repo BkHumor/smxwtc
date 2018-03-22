@@ -10,7 +10,7 @@
     </view>
     <view wx:if="{{isSrc}}" class="image_box">
         <view  class="picPre">
-            <image src="{{src}}"  mode="aspectFill"></image>
+            <image src="{{src[0]}}"  mode="aspectFill"></image>
             <view bindtap="clearPic"></view>
         </view>
     </view>

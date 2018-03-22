@@ -2,7 +2,9 @@ page {
   background-color: rgb(229, 229, 229);
   margin-left: auto;
 }
-
+.white{
+  color:#fff
+}
 .float-action {
   /*position: absolute;
   bottom: 20px;
@@ -272,4 +274,9 @@ height:100rpx;
   color:rgb(169, 169, 169);
   z-index:100;
 
+}
+.ser-add {
+position: fixed;
+bottom: 0;
+width: 100%;
 }

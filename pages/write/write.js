@@ -124,12 +124,12 @@ Page({
                   return;
                 } 
                 wx.showToast({
-                  title: '发布成功',
+                  title: '嗯~说嘞个美！',
                   icon: 'success',
                   duration: 800,
                   complete: setTimeout(function () {
                     wx.navigateTo({
-                      url: '../../index/index'
+                      url: '../serlist/serlist'
                     })
                   }, 800)
                 })
@@ -138,12 +138,12 @@ Page({
             )
           } else if (pic == 0) {
           wx.showToast({
-            title: '发布成功',
+            title: '嗯~说嘞个美！',
             icon: 'success',
             duration: 800,
             complete: setTimeout(function () {
               wx.navigateTo({
-                url: '../../index/index'
+                url: '../serlist/serlist'
               })
             }, 800)
           })

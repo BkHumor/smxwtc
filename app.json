@@ -10,7 +10,9 @@
     "pages/write/write",
     "pages/edit/edit",
     "pages/editDetail/editDetail",
-    "pages/rank/rank"
+    "pages/rank/rank",
+    "pages/serlist/serlist",
+    "pages/userCenter/userCenter"
   ],
   "window": {
     "enablePullDownRefresh": true,
@@ -30,18 +32,11 @@
         "text": "头页",
         "pagePath": "pages/index/index"
       },
-      
       {
-        "iconPath": "images\/58b91382c80c2.png",
-        "selectedIconPath": "images\/58b91382c811f.png",
-        "text": "发点信息",
-        "pagePath": "pages/publish/publish"
-      },
-      {
-        "iconPath": "images\/index_s1.png",
-        "selectedIconPath": "images\/index_s2.png",
-        "text": "说点 Ser",
-        "pagePath": "pages/write/write"
+        "iconPath": "images\/ser2.png",
+        "selectedIconPath": "images\/ser1.png",
+        "text": "Ser动态",
+        "pagePath": "pages/serlist/serlist"
       },
       {
         "iconPath": "images/account.png",

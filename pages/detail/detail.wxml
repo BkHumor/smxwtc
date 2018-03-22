@@ -67,4 +67,9 @@
       <text>/</text>
     </view>
   </view>
-</view>
+
+<view class="ser-add" wx:if="{{!showBtn}}" bindtap="goPub">  
+<image src="../../images/move_send.png" style="height: 70rpx; width: 70rpx;"></image>
+</view>  
+
+  </view>

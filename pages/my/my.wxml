@@ -6,7 +6,7 @@
       <image class="show-bac" src="../../images/bg_2.png"></image>
       <view class="user-center usercenter-mode1 background-ele with-horizontal-view show-logo">
         <view class="show-view">
-          <image class="cover-thumb" src="{{list.pic}}"></image>
+          <image class="cover-thumb" src="{{list.pic}}" bindtap='goUcenter'></image>
          <view class="nickname"> {{list.nickname}}  <image class="sex" src="{{list.sex}}"></image></view>
          <view class="p_user_info"><text class="user_info_num">33.6w </text>获赞　　　<text class="user_info_num">8 </text>关注　　　<text class="user_info_num">1.8w </text>粉丝</view><view></view>
         </view>

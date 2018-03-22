@@ -123,22 +123,26 @@ function getMapList(data, successCallback, errorCallback) {
 function addSay(data, successCallback, errorCallback) {
   requestData(api.addSay(), data, successCallback, errorCallback);
 }
-
+//删除说说
 function delSay(data, successCallback, errorCallback) {
   requestData(api.sayDel(), data, successCallback, errorCallback);
 }
-
+//说说图片
 function addSayPic(data, imageList, successCallback, errorCallback) {
   requestDataPic(api.addSayPic(), data, imageList, successCallback, errorCallback);
 }
-
+//首页五个
 function sayIndexNew(data,successCallback, errorCallback) {
   requestData(api.sayIndexNew(), data, successCallback, errorCallback);
 }
+//点赞
 function userLike(data, successCallback, errorCallback) {
   requestData(api.userLike(), data, successCallback, errorCallback);
 }
-
+//说说列表
+function sayList(data, successCallback, errorCallback) {
+  requestData(api.sayList(), data, successCallback, errorCallback);
+}
 module.exports = {
     login: login,
     getBanner: getBanner,
@@ -164,5 +168,6 @@ module.exports = {
     delSay: delSay,
     addSayPic: addSayPic,
     sayIndexNew:sayIndexNew,
-    userLike: userLike
+    userLike: userLike,
+    sayList: sayList
 };

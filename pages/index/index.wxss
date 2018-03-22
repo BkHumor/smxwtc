@@ -1,14 +1,14 @@
 /* pages/index/index.wxss */
 .body{
     margin: 0 auto;
-    padding:10rpx 0rpx 0rpx 40rpx;
+    padding:10rpx 0rpx 0rpx 15rpx;
     display: flex;
     flex-direction: row;
    
 }
 .type_box{
    margin-top:38px;
-   border-top:17px solid #efeff4;
+   border-top:1px solid #efeff4;
 
 }
 .body_item{
