@@ -38,7 +38,7 @@ page {
   line-height: 117rpx;
 }
 .centerPage-wrap .nickname,
-.centerPage-wrap .userCenter-tel,
+.centerPage-wrap .brief,
 .centerPage-wrap .centerPage-sex {
   float: right;
   border: none;
@@ -97,8 +97,8 @@ page {
   margin: 70rpx 50rpx;
   height:90rpx;
   line-height:90rpx;
-  background-color: #1AAD19;
-  color: #fff;
+  background:#1EADCB;
+  color:#ffffff;
   border-radius: 2px;
   text-align: center;
 }

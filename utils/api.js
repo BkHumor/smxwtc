@@ -134,6 +134,16 @@ const v26= 'say-list.htm';
 function sayList() {
   return api + v26;
 }
+//改资料
+const v27 = 'user-update.htm';
+function userUpdate() {
+  return api + v27;
+}
+//改头像
+const v28 = 'user-update_avatar.htm';
+function userUpdateAvatar() {
+  return api + v28;
+}
 module.exports = {
   login: login,
   getBanner: getBanner,
@@ -160,5 +170,7 @@ module.exports = {
   delSay: delSay,
   sayIndexNew: sayIndexNew,
   userLike: userLike,
-  sayList: sayList
+  sayList: sayList,
+  userUpdate:userUpdate,
+  userUpdateAvatar: userUpdateAvatar
 };

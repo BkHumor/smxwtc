@@ -143,6 +143,14 @@ function userLike(data, successCallback, errorCallback) {
 function sayList(data, successCallback, errorCallback) {
   requestData(api.sayList(), data, successCallback, errorCallback);
 }
+//修改个人资料
+function userUpdate(data, successCallback, errorCallback) {
+  requestData(api.userUpdate(), data, successCallback, errorCallback);
+}
+//改头像
+function userUpdateAvatar(data, imageList, successCallback, errorCallback) {
+  requestData(api.userUpdateAvatar(), data, imageList, successCallback, errorCallback);
+}
 module.exports = {
     login: login,
     getBanner: getBanner,
@@ -169,5 +177,7 @@ module.exports = {
     addSayPic: addSayPic,
     sayIndexNew:sayIndexNew,
     userLike: userLike,
-    sayList: sayList
+    sayList: sayList,
+    userUpdate:userUpdate,
+    userUpdateAvatar: userUpdateAvatar
 };

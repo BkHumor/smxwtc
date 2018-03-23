@@ -18,9 +18,10 @@
         <view class="picker">{{userInfo.sex}}</view>
       </picker>
     </view>
-    <view class="centerPage-info-item" bindtap="bindCellphonePage">
+    <view class="centerPage-info-item">
       <label>个性签名</label>
-      <view class="userCenter-tel">{{userInfo.brief}}</view>
+      <label class="ico-moon icon-rightarrow"></label>
+      <input class="brief" placeholder="一句话签名" value="{{ userInfo.brief }}" bindinput="inputBrief" />
     </view>
   </view>
 </view>
