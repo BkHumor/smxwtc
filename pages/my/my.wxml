@@ -19,7 +19,7 @@
         <navigator url="../edit/edit" class="weui-cell weui-cell_access" style="line-height:88rpx;font-size:36rpx;" hover-class="weui-cell_active">
           <view class="weui-cell__bd">
             <image src="../../images/feiji.png" class="feiji_icon"></image>
-            <text class="feiji_word">发乃</text>
+            <text class="feiji_word">发</text>
           </view>
           <view class="weui-cell__ft weui-cell__ft_in-access"></view>
         </navigator>
@@ -27,21 +27,21 @@
                 <navigator url="../edit/edit" class="weui-cell weui-cell_access" style="line-height:88rpx;font-size:36rpx;" hover-class="weui-cell_active">
           <view class="weui-cell__bd">
             <image src="../../images/shuo.png" class="shuo_icon"></image>
-            <text class="shuo_word">说乃</text>
+            <text class="shuo_word">说</text>
           </view>
           <view class="weui-cell__ft weui-cell__ft_in-access"></view>
            </navigator>
                 <navigator url="../edit/edit" class="weui-cell weui-cell_access" style="line-height:88rpx;font-size:36rpx;" hover-class="weui-cell_active">
           <view class="weui-cell__bd">
             <image src="../../images/ping.png" class="ping_icon"></image>
-            <text class="ping_word">评恰乃</text>
+            <text class="ping_word">评</text>
           </view>
           <view class="weui-cell__ft weui-cell__ft_in-access"></view>
           </navigator>
            <navigator url="../edit/edit" class="weui-cell weui-cell_access" style="line-height:88rpx;font-size:36rpx;" hover-class="weui-cell_active">
           <view class="weui-cell__bd">
             <image src="../../images/zan.png" class="ping_icon"></image>
-            <text class="ping_word">赞恰乃</text>
+            <text class="ping_word">赞</text>
           </view>
           <view class="weui-cell__ft weui-cell__ft_in-access"></view>
           </navigator>

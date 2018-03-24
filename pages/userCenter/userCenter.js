@@ -56,7 +56,16 @@ Page({
   },
   saveUserInfo: function (e) {//保存心情
     //判断心情是否为空
-    var data = this.data.userInfo;
+    if(this.data.userInfo.nickname == '') {
+      wx.showModal({
+        title: '提示',
+       content: '昵称不能为空',
+        showCancel: false,
+        success: function (res) {
+        }
+      });
+    }
+
     this.upload();
   },
   upload:function () {
@@ -69,7 +78,7 @@ Page({
     request.userUpdate(
       {
         "session_id": app.globalData.session_id,
-        "nickename":that.data.userInfo.nickname,
+        "nickname":that.data.userInfo.nickname,
         "sex":that.data.userInfo.sex,
         "brief":that.data.userInfo.brief,
       },
@@ -86,13 +95,14 @@ Page({
           return;
         }
         if (pic == 1) {
+          console.log(222222);
           request.userUpdateAvatar(
             {
               "session_id": app.globalData.session_id,
               "id": res.data.uid,
-            }, that.data.userInfo.pic[0],
+            }, that.data.userInfo.pic,
             (r) => {
-
+              console.log(r.data);
               if (r.data.status == "error") {
                 wx.showModal({
                   title: '提示',
@@ -104,7 +114,7 @@ Page({
                 return;
               }
               wx.showToast({
-                title: '嗯~说嘞个美！',
+                title: '保存成功！',
                 icon: 'success',
                 duration: 800,
                 complete: setTimeout(function () {
@@ -118,7 +128,7 @@ Page({
           )
         } else if (pic == 0) {
           wx.showToast({
-            title: '嗯~说嘞个美！',
+            title: '保存成功！',
             icon: 'success',
             duration: 800,
             complete: setTimeout(function () {

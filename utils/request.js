@@ -148,8 +148,9 @@ function userUpdate(data, successCallback, errorCallback) {
   requestData(api.userUpdate(), data, successCallback, errorCallback);
 }
 //改头像
+
 function userUpdateAvatar(data, imageList, successCallback, errorCallback) {
-  requestData(api.userUpdateAvatar(), data, imageList, successCallback, errorCallback);
+  requestDataPic(api.userUpdateAvatar(), data, imageList, successCallback, errorCallback);
 }
 module.exports = {
     login: login,
