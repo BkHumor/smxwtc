@@ -271,12 +271,13 @@ Page({
     var a = [];
     
     for (let i = 0; i < e.currentTarget.dataset.allpic.length; i++) {
-      a[i] = e.currentTarget.dataset.ip + e.currentTarget.dataset.allpic[i].logo;
+      a[i] = e.currentTarget.dataset.allpic[i]['filename'];
       // console.log(a[i]);
     }
+    console.log(e.currentTarget);
     wx.previewImage({
-      current: e.currentTarget.dataset.pic, // 当前显示图片的http链接
-      urls: a// 需要预览的图片http链接列表
+      current: e.currentTarget.dataset.allpic['aid'], // 当前显示图片的http链接
+      urls:a// 需要预览的图片http链接列表
     })
   },
   //打开地图

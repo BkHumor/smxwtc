@@ -12,7 +12,8 @@
     "pages/editDetail/editDetail",
     "pages/rank/rank",
     "pages/serlist/serlist",
-    "pages/userCenter/userCenter"
+    "pages/userCenter/userCenter",
+    "pages/listDetail/listDetail"
   ],
   "window": {
     "enablePullDownRefresh": true,

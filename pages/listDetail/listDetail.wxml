@@ -1,0 +1,7 @@
+<import src="../template/list.wxml" />
+<view class="toComment" wx:if="{{!isToResponse}}">
+  <form bindsubmit="publishComment">
+    <input placeholder="回复心情：" name="commContent" bindinput="bindKeyInput" value="{{publishContent}}" focus="{{autoFo}}" bindfocus="changeFocus" />
+    <button class="default" formType="submit" disabled="{{isdisabled}}" loading="{{commentLoading}}">发送</button>
+  </form>
+</view>

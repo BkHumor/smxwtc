@@ -16,6 +16,7 @@ Page({
     var userInfo = app.globalData.userInfo;
     console.log(userInfo);
     this.setData({userInfo:userInfo});
+    console.log(userInfo);
   },
   onShow: function(){
 
@@ -34,7 +35,7 @@ Page({
           isSrc: true,
           'userInfo.pic': tempFilePaths[0]
         })
-        console.log(that.data.src);
+    
       }
     })
   },

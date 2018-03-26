@@ -1,6 +1,6 @@
 //公用模版
 <template name="listTemp">
-    <image  mode="aspectFill" src="{{listPic}}" class="listPic"  bindtap="seeBig" wx:if="{{listPic}}"></image>
+    <image  mode="aspectFill" src="{{listPic}}" data-pic="{{listPic}}" data-aid="{{listAid}}" class="listPic"  bindtap="seeBig" wx:if="{{listPic}}"></image>
     <view class="listContent"><text>{{listContent}}</text></view>
 </template>
 <template name="listHeader">
