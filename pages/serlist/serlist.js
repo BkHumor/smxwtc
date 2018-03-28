@@ -28,5 +28,18 @@ Page({
     wx.navigateTo({
       url: '../write/write',
     })
+  },
+  golistDetail: function (e) {
+
+    wx.navigateTo({
+      url: '../listDetail/listDetail?id=' + e.currentTarget.dataset.id
+    })
+  },
+  seeBig: function (e) {
+    console.log(e.currentTarget);
+    wx.previewImage({
+      current: e.currentTarget.dataset.pic, // 当前显示图片的http链接
+      urls: [e.currentTarget.dataset.pic]// 需要预览的图片http链接列表
+    })
   }
 });

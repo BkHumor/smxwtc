@@ -13,9 +13,9 @@ wx.showToast({
   duration: 10000
 }),
 
-  setTimeout(function () {
-    wx.hideToast()
-  }, 2000)
+setTimeout(function () {
+  wx.hideToast()
+}, 2000)
 var timer = null;  // 循环定时器
 Page({
   data: {
@@ -272,6 +272,7 @@ Page({
   //ser详情
 
   golistDetail: function (e) {
+  
     wx.navigateTo({
       url: '../listDetail/listDetail?id=' + e.currentTarget.dataset.id
     })
@@ -291,3 +292,4 @@ Page({
     })
   }
 })
+  

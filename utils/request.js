@@ -152,6 +152,14 @@ function userUpdate(data, successCallback, errorCallback) {
 function userUpdateAvatar(data, imageList, successCallback, errorCallback) {
   requestDataPic(api.userUpdateAvatar(), data, imageList, successCallback, errorCallback);
 }
+//读取一条
+function readSay(data, successCallback, errorCallback) {
+  requestData(api.readSay(), data, successCallback, errorCallback);
+}
+//回复
+function postSay(data, successCallback, errorCallback) {
+  requestData(api.postSay(), data, successCallback, errorCallback);
+}
 module.exports = {
     login: login,
     getBanner: getBanner,
@@ -174,11 +182,13 @@ module.exports = {
     getAname: getAname,
     getMapList: getMapList,
     addSay: addSay,
+    readSay:readSay,
     delSay: delSay,
     addSayPic: addSayPic,
     sayIndexNew:sayIndexNew,
     userLike: userLike,
     sayList: sayList,
     userUpdate:userUpdate,
-    userUpdateAvatar: userUpdateAvatar
+    userUpdateAvatar: userUpdateAvatar,
+    postSay:postSay
 };

@@ -42,7 +42,7 @@
       {
         "iconPath": "images/account.png",
         "selectedIconPath": "images/accountAct.png",
-        "text": "恰乃",
+        "text": "我",
         "pagePath": "pages/my/my"
       }
     ]

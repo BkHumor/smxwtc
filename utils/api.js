@@ -144,6 +144,16 @@ const v28 = 'user-update_avatar.htm';
 function userUpdateAvatar() {
   return api + v28;
 }
+//读取一条
+const v29 = 'say-read.htm';
+function readSay() {
+  return api + v29;
+}
+//回复
+const v30 = 'post-add.htm';
+function postSay() {
+  return api + v30;
+}
 module.exports = {
   login: login,
   getBanner: getBanner,
@@ -172,5 +182,7 @@ module.exports = {
   userLike: userLike,
   sayList: sayList,
   userUpdate:userUpdate,
-  userUpdateAvatar: userUpdateAvatar
+  userUpdateAvatar: userUpdateAvatar,
+  readSay:readSay,
+  postSay:postSay,
 };

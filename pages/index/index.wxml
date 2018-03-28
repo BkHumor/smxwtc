@@ -46,7 +46,7 @@
 <view class="lineBg"></view>
 <!--ser开始-->
 <view class="activity">
-    <text>Ser友动态</text>
+    <text>最新动态</text>
 </view> 
 <view class="index_list">
   <view class="index_list_nav" url="../listDetail/listDetail?id={{item.sid}}" hover-class="navigator-hover" wx:for="{{list}}" wx:key="item">
@@ -67,7 +67,7 @@
         <text class="addr_info" bindtap="showMap" data-lng="{{item.lng}}" data-lat="{{item.lat}}">{{item.address}}</text>
       <view class="agree_{{item.islike}}" wx:if="{{item.islike == 0}}" > <image src="https://www.smxwtc.club/view/img/zan0.png"   class="bt-img" bindtap="onClickImage" id="{{item.sid}}" data-uid="{{item.uid}}" style="{{style_img}}width:20px;height:20px;" data-index="{{index}}" ></image> {{item.likes}}</view>
       <view class="agree_{{item.islike}}" wx:else> <image data-index="{{index}}" id="{{item.sid}}" data-uid="{{item.uid}}"  class="bt-img" bindtap="onClickImage" style="{{style_img}}width:20px;height:20px;" src="https://www.smxwtc.club/view/img/zan1.png"></image> {{item.likes}}</view>
-       <view class="commNum" bindtap='golistDetail'><image src="https://www.smxwtc.club/view/img/ping.png" data-id="{{item.sid}}"></image> {{item.posts}}</view>
+       <view class="commNum" bindtap='golistDetail' data-id="{{item.sid}}"><image src="https://www.smxwtc.club/view/img/ping.png"></image> {{item.posts}}</view>
     </view>
 
   </view>

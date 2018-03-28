@@ -1,7 +1,54 @@
-<import src="../template/list.wxml" />
+
+  <view class="index_list_nav">
+    <view class="list_header">
+      <view class="list_header_left">
+        <image mode="aspectFill" src="{{list.pic}}"></image>
+        <view>{{list.nickname}}</view>
+      </view>
+      <view class="list_header_right">{{list.addtime}}</view>
+    </view>
+    <image class="listPic" wx:if="{{list.pic_list.length>0}}" data-aid="{{list.pic_list[0].aid}}" data-pic="" mode="aspecFill" src="{{list.pic_list[0].filename}}"></image>
+    <view class="listContent">
+      <text>{{list.content}}</text>
+    </view>
+    <view class="list_footer">
+    <image  src="../../images/address.png" class="addr_icon {{list.address == '' ? 'hidden': ''}}" data-lng="{{list.lng}}" data-lat="{{list.lat}}" bindtap="showMap"></image>
+        <text class="addr_info" bindtap="showMap" data-lng="{{list.lng}}" data-lat="{{list.lat}}">{{list.address}}</text>
+      <view class="agree_{{list.islike}}" wx:if="{{list.islike == 0}}" > <image src="https://www.smxwtc.club/view/img/zan0.png"   class="bt-img" bindtap="onClickImage" id="{{list.sid}}" data-uid="{{list.uid}}" style="{{style_img}}width:20px;height:20px;" data-index="{{index}}" ></image> {{list.likes}}</view>
+      <view class="agree_{{list.islike}}" wx:else> <image data-index="{{index}}" id="{{list.sid}}" data-uid="{{list.uid}}"  class="bt-img" bindtap="onClickImage" style="{{style_img}}width:20px;height:20px;" src="https://www.smxwtc.club/view/img/zan1.png"></image> {{list.likes}}</view>
+       <view class="commNum" bindtap='golistDetail'><image src="https://www.smxwtc.club/view/img/ping.png" data-id="{{list.sid}}"></image> {{list.posts}}</view>
+    </view>
+
+  </view>
+<!--评论列表 -->
+
+<view class="activity">
+    <view class="post_sub_view" style="border-bottom:1px solid rgba(0, 0, 0, 0.1);"><text class="post_sub" >　评论</text></view>
+    <view wx:if="{{list.postlist.length == 0}}" class="post_none"><text>还木有人评论，赶紧来抢个沙发吧~</text> </view>
+<view class="postlist" wx:for="{{list.postlist}}" wx:key="{{item}}">
+  <view class="index_list_nav">
+    <view class="list_header">
+      <view class="list_header_left">
+        <image mode="aspectFill" src="{{item.pic}}"></image>
+        <view>{{item.nickname}}</view>
+      </view>
+      <view class="list_header_right">{{item.create_date}}</view>
+    </view>
+  <view class="listContent">
+      <text>{{item.content}}</text>
+    </view>
+    <view class="list__footer">
+      <view class="agree_{{list.islike}}" wx:if="{{list.islike == 0}}" > <image src="https://www.smxwtc.club/view/img/zan0.png"   class="bt-img" bindtap="onClickpImage" id="{{item.pid}}" data-uid="{{item.uid}}" style="{{style_img}}width:20px;height:20px;" data-index="{{index}}" ></image> {{item.likes}}</view>
+      <view class="agree_{{list.islike}}" wx:else> <image data-index="{{index}}" id="{{item.pid}}" data-uid="{{item.uid}}"  class="bt-img" bindtap="onClickpImage" style="{{style_img}}width:20px;height:20px;" src="https://www.smxwtc.club/view/img/zan1.png"></image> {{item.likes}}</view>
+    </view>
+
+  </view>
+</view>
+</view> 
+
 <view class="toComment" wx:if="{{!isToResponse}}">
   <form bindsubmit="publishComment">
-    <input placeholder="回复心情：" name="commContent" bindinput="bindKeyInput" value="{{publishContent}}" focus="{{autoFo}}" bindfocus="changeFocus" />
-    <button class="default" formType="submit" disabled="{{isdisabled}}" loading="{{commentLoading}}">发送</button>
+    <input placeholder="回复：" name="commContent" bindinput="inputContent" value="{{publishContent}}" focus="{{autoFo}}" bindfocus="changeFocus" />
+    <button class="default" formType="submit" disabled="{{isdisabled}}" loading="{{commentLoading}}" style="background:#1EADCB;color:#ffffff;">发送</button>
   </form>
 </view>

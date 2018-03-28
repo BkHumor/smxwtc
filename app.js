@@ -58,6 +58,30 @@ App({
           that.globalData.userInfo = res.data;
         } else if(res.data.status == 201) {
           wx.removeStorageSync('sessionkey');
+          wx.login({
+            success: function (res) {
+              console.log(res);
+              if (res.code) {
+                //发起网络请求
+                request.login(
+                  {
+                    "code": res.code
+                  }, (res) => {
+
+                    console.log(res);
+                    var session_id = res.data.session_id;
+                    that.globalData.session_id = res.data.session_id;
+                    wx.setStorageSync('sessionkey', session_id);
+                    if (that.session_idCallback) {
+                      that.session_idCallback(session_id);
+                    }
+                  }
+                )
+              } else {
+                console.log('获取用户登录态失败！' + res.errMsg)
+              }
+            }
+          });
         }
 
       },
