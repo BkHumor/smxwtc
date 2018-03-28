@@ -24,6 +24,36 @@ Page({
         },
       );
     },
+  //赞
+  
+  onClickImage: function (e) {
+    var that = this;
+    var _uid = e.currentTarget.dataset.uid
+    var _id = e.currentTarget.id;
+    var _index = e.currentTarget.dataset.index;
+    if(that.data.list[_index].islike == 0) {
+      request.userLike(
+        { "sid": _id, "touid": _uid, "session_id": app.globalData.session_id },
+        (res) => {
+          console.log(res);
+          //成功后的处理。
+          var _listislike = 'list[' + _index + '].islike';
+          var _listlikes = 'list[' + _index + '].likes';
+
+          if (res.data.code == 200) {
+            that.setData({
+              [_listislike]: 1,
+              [_listlikes]: parseInt(that.data.list[_index].likes) + 1
+            });
+
+          }
+
+        }
+      );
+    } else {
+      return;
+    }
+  },
   goPub: function () {
     wx.navigateTo({
       url: '../write/write',

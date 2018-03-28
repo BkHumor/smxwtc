@@ -123,8 +123,37 @@ Page({
   },
   seeBig: function (e) {
     wx.previewImage({
-      current: that.data.listPic, // 当前显示图片的http链接
-      urls: [that.data.listPic] // 需要预览的图片http链接列表
+      current: that.data.list.pic_list[0].filename, // 当前显示图片的http链接
+      urls: [that.data.list.pic_list[0].filename] // 需要预览的图片http链接列表
     })
-  }
+  },
+  //say 赞
+  onClickImage: function (e) {
+    var that = this;
+    var _uid = e.currentTarget.dataset.uid
+    var _id = e.currentTarget.id;
+    if (that.data.list.islike == 0) {
+      request.userLike(
+        { "sid": _id, "touid": _uid, "session_id": app.globalData.session_id },
+        (res) => {
+          console.log(res);
+          //成功后的处理。
+          var _listislike = 'list.islike';
+          var _listlikes = 'list.likes';
+
+          if (res.data.code == 200) {
+            that.setData({
+              [_listislike]: 1,
+              [_listlikes]: parseInt(that.data.list.likes) + 1
+            });
+
+          }
+
+        }
+      );
+    } else {
+      return;
+    }
+
+  },
 })
