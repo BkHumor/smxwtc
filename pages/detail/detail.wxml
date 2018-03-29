@@ -1,4 +1,8 @@
+
 <scroll-view scroll-x="true" class="xscroll_bar">
+<view class="ser-add" wx:if="{{!showBtn}}" bindtap="goPub">  
+<image src="../../images/move_send.png" style="height: 35px; width: 35px;"></image>
+</view>
 <view class="menu_item {{0==activeIndex?'active':''}}" style="width:{{itemWidth}};"  bindtap="tabChange" data-index="0">
     <view class="menu_item_border">
       全部
@@ -67,9 +71,4 @@
       <text>/</text>
     </view>
   </view>
-
-<view class="ser-add" wx:if="{{!showBtn}}" bindtap="goPub">  
-<image src="../../images/move_send.png" style="height: 70rpx; width: 70rpx;"></image>
-</view>  
-
-  </view>
+</view>

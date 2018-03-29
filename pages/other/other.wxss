@@ -30,7 +30,7 @@
 }
 
 .show-bac {
-  height: 367rpx;
+  height: 100%;
   width: 100%;
   position: absolute;
   z-index: 1;
@@ -48,7 +48,7 @@
 }
 
 .app .user-center.with-horizontal-view .show-view {
-  height: 375rpx;
+  height: 350rpx;
   width: 750rpx;
   text-align: center;
 }
@@ -72,7 +72,7 @@
   vertical-align: middle;
   margin-top: 10px;
   margin-bottom: 15px;
-  color: rgb(255, 255, 255);
+  color: grey;
   font-family:"PingFangSC-Regular","sans-serif","STHeitiSC-Light","微软雅黑","Microsoft YaHei";
   font-size: 30rpx;
 }
@@ -165,10 +165,10 @@ display:inline-block;
 .user_info_num {
   font-size: 35rpx;
   font-weight: bold;
-  color:white;
+  color:#117887;
 }
 .p_user_info {
-  color:white;
+  color:grey;
 }
 .about{
    padding:40rpx 30rpx;
@@ -199,7 +199,7 @@ display:inline-block;
 .badge {
     display: inline-block;
     padding: 0.25em 0.45em;
-    font-size: 75%;
+    font-size: 85%;
     font-weight: 700;
     line-height: 1;
     text-align: center;

@@ -168,6 +168,10 @@ function getUserSay(data, successCallback, errorCallback) {
 function getUserByUid(data, successCallback, errorCallback) {
   requestData(api.getUserByUid(), data, successCallback, errorCallback);
 }
+//获取排行
+function getUserRank(data, successCallback, errorCallback) {
+  requestData(api.getUserRank(), data, successCallback, errorCallback);
+}
 module.exports = {
     login: login,
     getBanner: getBanner,
@@ -201,4 +205,5 @@ module.exports = {
     postSay:postSay,
     getUserSay:getUserSay,
     getUserByUid: getUserByUid,
+    getUserRank:getUserRank
 };

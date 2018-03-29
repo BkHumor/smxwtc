@@ -164,6 +164,12 @@ const v32 = 'user-read_by_uid.htm';
 function getUserByUid() {
   return api + v32;
 }
+//排行榜
+const v33 = 'user-ranklist.htm';
+function getUserRank() {
+  return api + v33;
+}
+
 module.exports = {
   login: login,
   getBanner: getBanner,
@@ -197,4 +203,5 @@ module.exports = {
   postSay:postSay,
   getUserSay:getUserSay,
   getUserByUid:getUserByUid,
+  getUserRank:getUserRank
 };

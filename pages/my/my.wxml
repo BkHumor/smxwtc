@@ -3,7 +3,7 @@
 <view class="wrap">
   <view class="app">
     <view class="ele-container">
-      <image class="show-bac" src="../../images/bg_2.png"></image>
+      <image class="show-bac" src="../../images/other_bg2.jpg"></image>
       <view class="user-center usercenter-mode1 background-ele with-horizontal-view show-logo">
         <view class="show-view">
           <image class="cover-thumb" src="{{list.avatar_url}}" bindtap='goUcenter'></image>

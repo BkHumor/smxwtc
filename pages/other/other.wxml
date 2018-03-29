@@ -1,18 +1,22 @@
 <import src="../../wxParse/wxParse.wxml"/> 
 <view>
 <view class="wrap">
+ <image class="show-bac" src="../../images/other_bg1.jpg"></image>
   <view class="app">
     <view class="ele-container">
-      <image class="show-bac" src="../../images/other_bg.jpg"></image>
+     
       <view class="user-center usercenter-mode1 background-ele with-horizontal-view show-logo">
         <view class="show-view">
           <image class="cover-thumb" src="{{list.avatar_url}}" bindtap='goUcenter'></image>
-         <view class="nickname"> {{list.nickname}}  <image class="sex" src="{{list.sex}}"></image></view>
+         
+         <view class="nickname"> <image src="../../images/over_fans.png" bindtap='befans' style="width:25px;height:25px;display:inline-block;margin-right:5px;"></image>{{list.nickname}}  <image class="sex" src="{{list.sex}}"></image> </view>
          <view class="p_user_info"><text class="user_info_num">{{list.likes}} </text>获赞　　　<text class="user_info_num">{{list.follows}} </text>关注　　　<text class="user_info_num">{{list.fansnum}} </text>粉丝</view><view></view>
         </view>
-        <view>个性签名：<text>{{list.brief}}</text></view>
+        <view class="bottom">
+        <view><text style='font-size:28rpx;padding-left:70rpx;color:grey;'>段位：</text><text class="badge badge-warning text-white">{{list.rank_arr.rankname}}</text></view>
+        <view style='font-size:28rpx;color:grey;padding-left:70rpx;padding-right:70rpx'>签名：<text style='font-size:26rpx;color:grey;'>{{list.brief == "" ? '这个懒家伙什么也没写~' : list.brief}}</text></view>
       </view>
-     
+     </view>
     </view>
   </view>
   

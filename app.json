@@ -21,7 +21,7 @@
     "enablePullDownRefresh": true,
     "navigationBarBackgroundColor": "#1A93DF",
     "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "M友动态"
+    "navigationBarTitleText": "多彩M城"
   },
   "tabBar": {
     "borderStyle": "white",
@@ -34,6 +34,12 @@
         "selectedIconPath": "images\/58b91382af631.png",
         "text": "头页",
         "pagePath": "pages/index/index"
+      },
+      {
+          "iconPath": "images\/rank_1.png",
+          "selectedIconPath": "images\/rank_2.png",
+          "text": "M友排行",
+          "pagePath": "pages/rank/rank"
       },
       {
         "iconPath": "images\/ser2.png",
