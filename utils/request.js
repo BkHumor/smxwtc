@@ -125,7 +125,7 @@ function addSay(data, successCallback, errorCallback) {
 }
 //删除说说
 function delSay(data, successCallback, errorCallback) {
-  requestData(api.sayDel(), data, successCallback, errorCallback);
+  requestData(api.delSay(), data, successCallback, errorCallback);
 }
 //说说图片
 function addSayPic(data, imageList, successCallback, errorCallback) {
@@ -160,6 +160,14 @@ function readSay(data, successCallback, errorCallback) {
 function postSay(data, successCallback, errorCallback) {
   requestData(api.postSay(), data, successCallback, errorCallback);
 }
+//我的说说
+function getUserSay(data, successCallback, errorCallback) {
+  requestData(api.getUserSay(), data, successCallback, errorCallback);
+}
+//别人
+function getUserByUid(data, successCallback, errorCallback) {
+  requestData(api.getUserByUid(), data, successCallback, errorCallback);
+}
 module.exports = {
     login: login,
     getBanner: getBanner,
@@ -190,5 +198,7 @@ module.exports = {
     sayList: sayList,
     userUpdate:userUpdate,
     userUpdateAvatar: userUpdateAvatar,
-    postSay:postSay
+    postSay:postSay,
+    getUserSay:getUserSay,
+    getUserByUid: getUserByUid,
 };

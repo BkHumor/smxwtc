@@ -13,13 +13,15 @@
     "pages/rank/rank",
     "pages/serlist/serlist",
     "pages/userCenter/userCenter",
-    "pages/listDetail/listDetail"
+    "pages/listDetail/listDetail",
+    "pages/myser/myser",
+    "pages/other/other"
   ],
   "window": {
     "enablePullDownRefresh": true,
     "navigationBarBackgroundColor": "#1A93DF",
     "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "你说Ser"
+    "navigationBarTitleText": "M友动态"
   },
   "tabBar": {
     "borderStyle": "white",
@@ -36,7 +38,7 @@
       {
         "iconPath": "images\/ser2.png",
         "selectedIconPath": "images\/ser1.png",
-        "text": "Ser动态",
+        "text": "M友动态",
         "pagePath": "pages/serlist/serlist"
       },
       {

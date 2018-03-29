@@ -154,6 +154,16 @@ const v30 = 'post-add.htm';
 function postSay() {
   return api + v30;
 }
+//我的说说
+const v31 = 'say-read_by_user.htm';
+function getUserSay() {
+  return api + v31;
+}
+//读取别人
+const v32 = 'user-read_by_uid.htm';
+function getUserByUid() {
+  return api + v32;
+}
 module.exports = {
   login: login,
   getBanner: getBanner,
@@ -185,4 +195,6 @@ module.exports = {
   userUpdateAvatar: userUpdateAvatar,
   readSay:readSay,
   postSay:postSay,
+  getUserSay:getUserSay,
+  getUserByUid:getUserByUid,
 };

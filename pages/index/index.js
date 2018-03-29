@@ -284,6 +284,12 @@ Page({
       url: '../adDetail/adDetail?id=' + e.currentTarget.dataset.id
     })
   },
+  gotouser: function (e) {
+   
+    wx.navigateTo({
+      url: '../other/other?touid=' + e.currentTarget.dataset.uid
+    })
+  },
   seeBig: function (e) {
     console.log(e.currentTarget);
     wx.previewImage({

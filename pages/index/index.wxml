@@ -50,7 +50,7 @@
 </view> 
 <view class="index_list">
   <view class="index_list_nav" url="../listDetail/listDetail?id={{item.sid}}" hover-class="navigator-hover" wx:for="{{list}}" wx:key="item">
-    <template is="listHeader" data="{{userPic:item.pic,userNick:item.nickname,publishTime:item.addtime}}" />
+    <template is="listHeader" data="{{uid:item.uid,userPic:item.pic,userNick:item.nickname,publishTime:item.addtime}}" />
     <template is="listTemp" data="{{listPic:item.pic_list[0].filename,listContent:item.descript,listAid:item.pic_list[0]['aid']}}" />
     <view class="list_footer">
       <!-- <view class="agreeNum agree_{{item.likes}}">{{item.likes}}</view> -->

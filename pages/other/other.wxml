@@ -1,0 +1,36 @@
+<import src="../../wxParse/wxParse.wxml"/> 
+<view>
+<view class="wrap">
+  <view class="app">
+    <view class="ele-container">
+      <image class="show-bac" src="../../images/other_bg.jpg"></image>
+      <view class="user-center usercenter-mode1 background-ele with-horizontal-view show-logo">
+        <view class="show-view">
+          <image class="cover-thumb" src="{{list.avatar_url}}" bindtap='goUcenter'></image>
+         <view class="nickname"> {{list.nickname}}  <image class="sex" src="{{list.sex}}"></image></view>
+         <view class="p_user_info"><text class="user_info_num">{{list.likes}} </text>获赞　　　<text class="user_info_num">{{list.follows}} </text>关注　　　<text class="user_info_num">{{list.fansnum}} </text>粉丝</view><view></view>
+        </view>
+        <view>个性签名：<text>{{list.brief}}</text></view>
+      </view>
+     
+    </view>
+  </view>
+  
+
+  <view class="about">
+    <view class="about_info">
+    </view>
+    <view class="about_tel">
+    
+    </view>
+  </view>
+  <view class="about_bottom">
+    <view><text></text></view>
+    <view>
+      <text>联系方式：13137977266</text>
+    </view>
+  </view>
+  
+  
+  </view>
+</view>
