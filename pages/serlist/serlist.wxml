@@ -2,7 +2,7 @@
 <view class="index_list">  
 
 <view class="index_list_nav" url="" hover-class="navigator-hover" wx:for="{{list}}" wx:key="item">
-    <template is="listHeader" data="{{userPic:item.pic,userNick:item.nickname,publishTime:item.addtime}}" />
+    <template is="listHeader" data="{{uid:item.uid,userPic:item.pic,userNick:item.nickname,publishTime:item.addtime}}" />
     <template is="listTemp" data="{{listPic:item.pic_list[0].filename,listContent:item.descript}}" />
     <view class="list_footer">
     <image  src="../../images/address.png" class="addr_icon {{item.address == '' ? 'hidden': ''}}" data-lng="{{item.lng}}" data-lat="{{item.lat}}" bindtap="showMap"></image>

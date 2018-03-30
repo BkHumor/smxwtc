@@ -20,9 +20,15 @@ Page({
         {},
         (res)=>{
 
+              that.setData({
+                listData:res.data
+              });
+            
+           
         }
         );
     },
+
     onShareAppMessage: function () {
         return {
             title: 'M友排行',

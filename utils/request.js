@@ -172,6 +172,26 @@ function getUserByUid(data, successCallback, errorCallback) {
 function getUserRank(data, successCallback, errorCallback) {
   requestData(api.getUserRank(), data, successCallback, errorCallback);
 }
+//关注
+function userFollow(data, successCallback, errorCallback) {
+  requestData(api.userFollow(), data, successCallback, errorCallback);
+}
+//取关
+function userUnFollow(data, successCallback, errorCallback) {
+  requestData(api.userUnFollow(), data, successCallback, errorCallback);
+}
+//关注列表
+function userFollowList(data, successCallback, errorCallback) {
+  requestData(api.userFollowList(), data, successCallback, errorCallback);
+}
+//粉丝列表
+function userFansList(data, successCallback, errorCallback) {
+  requestData(api.userFansList(), data, successCallback, errorCallback);
+}
+//赞动态
+
+//评论动态
+
 module.exports = {
     login: login,
     getBanner: getBanner,
@@ -205,5 +225,9 @@ module.exports = {
     postSay:postSay,
     getUserSay:getUserSay,
     getUserByUid: getUserByUid,
-    getUserRank:getUserRank
+    getUserRank:getUserRank,
+    userFollow: userFollow,
+    userUnFollow: userUnFollow,
+    userFollowList: userFollowList,
+    userFansList: userFansList,
 };

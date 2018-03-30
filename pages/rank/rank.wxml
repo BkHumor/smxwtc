@@ -1,20 +1,16 @@
-<view class="container">
-  <block wx:for="{{dataList}}" wx:key="item">
-    <view class="rank-item">
-      <!--头像-->
-      <view class="rank-img">
-        <image src="{{item.avatar_url}}"></image>
-      </view>
-      <!--展示昵称,以及粉丝量-->
-      <block>
-        <view class="rank-name">{{item.nickname}}</view>
-        <view class="rank-price">{{item.fansnum}}</view>
-      </block>
-      <!--排名-->
-      <view class="rank-uv">
-        <text wx:if="{{item.rank>3}}">第 {{item.rank}} 名</text>
-        <image src="/images/rank{{item.rank}}.png" wx:if="{{item.rank<=3}}" />
-      </view>
+<view class="table" style='background:url(https://www.smxwtc.club/view/img/rankbg2.jpg)'>
+  <view class="tr bg-w">
+    <view class="th">排名</view>
+    <view class="th">昵称</view>
+    <view class="th ">分数</view>
+    <view class="th ">段位</view>
+  </view>
+  <block wx:for="{{listData}}" wx:key="{{item}}">
+    <view class="tr">
+      <view class="td">{{item.ix}}</view>
+      <view class="td td-img"><image class="rank-img" src="{{item.avatar_url}}"></image><text class="nickname">{{item.nickname}}</text></view>
+      <view class="td">{{item.rank}}</view>
+      <view class="td badge-warning badge text-white">{{item.rank_name}}</view>
     </view>
   </block>
 </view>

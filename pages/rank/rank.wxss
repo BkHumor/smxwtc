@@ -1,75 +1,71 @@
 page {
   background-color: #fbf9fe;
 }
-
-.container {
-  width: 100%;
-  margin-bottom: 50rpx;
-}
-
-.rank-item {
-  height: 140rpx;
-  background: #fff;
-  margin-bottom: 8rpx;
-  padding: 20rpx 20rpx 20rpx 50rpx;
-  box-sizing: border-box;
-  position: relative;
-}
-
-.rank-item .rank-img {
-  width: 100rpx;
-  height: 100rpx;
+.rank-img {
+  width: 60rpx;
+  height: 60rpx;
   float: left;
-  margin-right: 50rpx;
+  border-radius: 50%;
   position: relative;
 }
 
-.rank-item .rank-img image {
+.show-bac {
+  height: 100%;
+  width: 100%;
   position: absolute;
-  border-radius: 50%;
-  width: 100rpx;
-  height: 100rpx;
-  top: 0;
-  left: 0;
 }
-
-.rank-item .rank-name {
-  font-size: 32rpx;
-  height: 50rpx;
-  line-height: 50rpx;
-  color: #4e5b65;
-  font-weight: bold;
+.text-white {
+    color: #fff !important;
 }
-
-.rank-item .rank-full {
-  font-size: 32rpx;
-  height: 100rpx;
-  line-height: 100rpx;
-  color: #4e5b65;
+.badge-warning {
+    color: #212529;
+    background-color: #f1c84c;
 }
-
-.rank-item .rank-price {
-  height: 40rpx;
-  line-height: 40rpx;
-  margin-top: 10rpx;
-  font-size: 24rpx;
-  color: #d55a4a;
+.badge {
+    display: inline-block;
+    padding: 0.25em 0.45em;
+    font-size: 85%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25rem;
 }
-
-.rank-item .rank-uv text {
-  font-size: 38rpx;
-  position: absolute;
-  height: 100rpx;
-  line-height: 100rpx;
-  bottom: 20rpx;
-  right: 20rpx;
-  color: #777;
+.table {
+  border: 0px solid darkgray;
+ }
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 3rem;
+  align-items: center;
 }
+.td {
+    width:40%;
+    justify-content: center;
+    text-align: center;
+}
+.bg-w{
+  background: snow;
+}
+.bg-g{
+  background: #E6F3F9;
+}
+.th {
+  width: 40%;
+  justify-content: center;
+  background:#117887;
+  color: #fff;
+  display: flex;
+  height: 3rem;
+  align-items: center;
+}
+.tr .td-img{
+  width:60%;
+}
+.nickname {
+  font-size: 26rpx;
 
-.rank-item .rank-uv image {
-  position: absolute;
-  width: 100rpx;
-  height: 100rpx;
-  bottom: 20rpx;
-  right: 20rpx;
 }

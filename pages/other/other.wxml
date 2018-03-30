@@ -9,32 +9,30 @@
         <view class="show-view">
           <image class="cover-thumb" src="{{list.avatar_url}}" bindtap='goUcenter'></image>
          
-         <view class="nickname"> <image src="../../images/over_fans.png" bindtap='befans' style="width:25px;height:25px;display:inline-block;margin-right:5px;"></image>{{list.nickname}}  <image class="sex" src="{{list.sex}}"></image> </view>
+         <view class="nickname"> <image wx:if="{{list.isfollow == 0}}" bindtap="tofollow" src="../../images/add_fans.png"  style="width:25px;height:25px;display:inline-block;margin-right:5px;"></image> <image  bindtap="tounfollow"  wx:if="{{list.isfollow == 1}}" src="../../images/over_fans.png"  style="width:25px;height:25px;display:inline-block;margin-right:5px;"></image>{{list.nickname}}  <image class="sex" src="{{list.sex}}"></image> </view>
          <view class="p_user_info"><text class="user_info_num">{{list.likes}} </text>获赞　　　<text class="user_info_num">{{list.follows}} </text>关注　　　<text class="user_info_num">{{list.fansnum}} </text>粉丝</view><view></view>
         </view>
         <view class="bottom">
-        <view><text style='font-size:28rpx;padding-left:70rpx;color:grey;'>段位：</text><text class="badge badge-warning text-white">{{list.rank_arr.rankname}}</text></view>
+        <view><text style='font-size:28rpx;padding-left:70rpx;color:grey;'>段位：</text><text class="badge badge-warning text-white">{{list.rank_name}}</text></view>
         <view style='font-size:28rpx;color:grey;padding-left:70rpx;padding-right:70rpx'>签名：<text style='font-size:26rpx;color:grey;'>{{list.brief == "" ? '这个懒家伙什么也没写~' : list.brief}}</text></view>
       </view>
      </view>
     </view>
   </view>
   
+  
+  </view>
 
-  <view class="about">
-    <view class="about_info">
-    </view>
-    <view class="about_tel">
-    
-    </view>
-  </view>
-  <view class="about_bottom">
-    <view><text></text></view>
-    <view>
-      <text>联系方式：13137977266</text>
-    </view>
-  </view>
-  
-  
-  </view>
+<view class="lineBg"></view>
+<!--ser开始-->
+<view class="activity">
+    <text>Ta的动态</text>
+</view> 
+<view class="index_list" >
+  <view class="index_list_nav" url="../listDetail/listDetail?id={{item.sid}}" hover-class="navigator-hover" wx:for="{{list.saylist}}" wx:key="item">
+    <template is="listHeader" data="{{uid:item.uid,userPic:item.pic,userNick:item.nickname,publishTime:item.addtime}}" />
+    <template is="listTemp" data="{{listPic:item.pic_list[0].filename,listContent:item.descript,listAid:item.pic_list[0]['aid']}}" />
+  </view> 
+</view> 
+
 </view>

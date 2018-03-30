@@ -129,7 +129,7 @@ Page({
                   duration: 800,
                   complete: setTimeout(function () {
                     wx.navigateTo({
-                      url: '../serlist/serlist'
+                      url: '../listDetail/listDetail?id=' + res.data.lastid
                     })
                   }, 800)
                 })
@@ -143,7 +143,7 @@ Page({
             duration: 800,
             complete: setTimeout(function () {
               wx.navigateTo({
-                url: '../serlist/serlist'
+                url: '../listDetail/listDetail?id=' + res.data.lastid
               })
             }, 800)
           })

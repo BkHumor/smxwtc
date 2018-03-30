@@ -169,7 +169,36 @@ const v33 = 'user-ranklist.htm';
 function getUserRank() {
   return api + v33;
 }
-
+//关注
+const v34 = 'user-follow.htm';
+function userFollow() {
+  return api + v34;
+}
+//取关
+const v35 = 'user-unfollow.htm';
+function userUnFollow() {
+  return api + v35;
+}
+//关注列表
+const v36 = 'user-followlist.htm';
+function userFollowList() {
+  return api + v36;
+}
+//粉丝列表
+const v37 = 'user-fanslist.htm';
+function userFansList() {
+  return api + v37;
+}
+//赞动态
+const v38 = 'user-likepm.htm';
+function userLikePm() {
+  return api + v38;
+}
+//评论动态
+const v39 = 'user-postpm.htm';
+function userPostPm() {
+  return api + v39;
+}
 module.exports = {
   login: login,
   getBanner: getBanner,
@@ -203,5 +232,10 @@ module.exports = {
   postSay:postSay,
   getUserSay:getUserSay,
   getUserByUid:getUserByUid,
-  getUserRank:getUserRank
+  getUserRank:getUserRank,
+  userFollow: userFollow,
+  userUnFollow: userUnFollow,
+  userFollowList: userFollowList,
+  userFansList: userFansList,
+
 };

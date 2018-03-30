@@ -59,6 +59,12 @@ Page({
       url: '../write/write',
     })
   },
+  gotouser: function (e) {
+
+    wx.navigateTo({
+      url: '../other/other?touid=' + e.currentTarget.dataset.uid
+    })
+  },
   golistDetail: function (e) {
 
     wx.navigateTo({
