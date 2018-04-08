@@ -1,5 +1,5 @@
 // 主地址
-const api = 'https://www.smxwtc.club/?';
+const api = 'https://www.smxwtc.club/smxwtc/?';
 // 登录
 const v1 = 'user-login.htm';
 function login() {
@@ -190,12 +190,12 @@ function userFansList() {
   return api + v37;
 }
 //赞动态
-const v38 = 'user-likepm.htm';
+const v38 = 'user-pmlike.htm';
 function userLikePm() {
   return api + v38;
 }
 //评论动态
-const v39 = 'user-postpm.htm';
+const v39 = 'user-pmpost.htm';
 function userPostPm() {
   return api + v39;
 }
@@ -237,5 +237,7 @@ module.exports = {
   userUnFollow: userUnFollow,
   userFollowList: userFollowList,
   userFansList: userFansList,
+  userLikePm: userLikePm,
+  userPostPm: userPostPm
 
 };

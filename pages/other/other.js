@@ -61,20 +61,32 @@ Page({
       { "touid": that.data.touid, "session_id": app.globalData.session_id },
       (res) => {
         console.log(res.data);
-        wx.showToast({
-          title: '关注成功',
-          icon: 'success',
-          duration: 10000
-        }),
-        setTimeout(function () {
-            wx.hideToast()
-        }, 1000)
-        var _isfollow = 'list.isfollow';
-        var _fansnum = 'list.fansnum';
-        that.setData({
-          [_isfollow]:1,
-          [_fansnum]:parseInt(that.data.list.fansnum+1)
-        })
+        if(res.data.status == '200') {
+          wx.showToast({
+            title: '关注成功',
+            icon: 'success',
+            duration: 10000
+          }),
+          setTimeout(function () {
+              wx.hideToast()
+          }, 1000)
+          var _isfollow = 'list.isfollow';
+          var _fansnum = 'list.fansnum';
+          that.setData({
+            [_isfollow]:1,
+            [_fansnum]:parseInt(that.data.list.fansnum+1)
+          })
+        } else if(res.data.status == 'error') {
+          var msg = res.data.msg;
+          wx.showToast({
+            title: msg,
+            icon: 'warn',
+            duration: 10000
+          }),
+            setTimeout(function () {
+              wx.hideToast()
+            }, 1000)
+        }
       },
     )
   },
@@ -99,7 +111,13 @@ Page({
         })
       },
     )
-  }
+  },
+  golistDetail: function (e) {
+
+    wx.navigateTo({
+      url: '../listDetail/listDetail?id=' + e.currentTarget.dataset.id
+    })
+  },
 })
 
 

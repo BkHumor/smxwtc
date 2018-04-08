@@ -9,12 +9,72 @@
         <view class="show-view">
           <image class="cover-thumb" src="{{list.avatar_url}}" bindtap='goUcenter'></image>
          
-         <view class="nickname"> <image wx:if="{{list.isfollow == 0}}" bindtap="tofollow" src="../../images/add_fans.png"  style="width:25px;height:25px;display:inline-block;margin-right:5px;"></image> <image  bindtap="tounfollow"  wx:if="{{list.isfollow == 1}}" src="../../images/over_fans.png"  style="width:25px;height:25px;display:inline-block;margin-right:5px;"></image>{{list.nickname}}  <image class="sex" src="{{list.sex}}"></image> </view>
+         <view class="nickname"> <image wx:if="{{list.isfollow == 0}}" bindtap="tofollow" src="../../images/add_fans.png"  style="width:25px;height:25px;display:inline-block;margin-right:5px;"></image> <image  bindtap="tounfollow"  wx:if="{{list.isfollow == 1}}" src="../../images/over_fans.png"  style="width:25px;height:25px;display:inline-block;margin-right:5px;"></image>{{list.nickname}}  <image class="sex" src="{{list.sex}}"></image> <view class="mname">M 号 : <text class="">{{list.name}}</text></view></view>
          <view class="p_user_info"><text class="user_info_num">{{list.likes}} </text>获赞　　　<text class="user_info_num">{{list.follows}} </text>关注　　　<text class="user_info_num">{{list.fansnum}} </text>粉丝</view><view></view>
         </view>
         <view class="bottom">
-        <view><text style='font-size:28rpx;padding-left:70rpx;color:grey;'>段位：</text><text class="badge badge-warning text-white">{{list.rank_name}}</text></view>
-        <view style='font-size:28rpx;color:grey;padding-left:70rpx;padding-right:70rpx'>签名：<text style='font-size:26rpx;color:grey;'>{{list.brief == "" ? '这个懒家伙什么也没写~' : list.brief}}</text></view>
+        <view style="margin-top:10px;"><text style='font-size:28rpx;padding-left:70rpx;color:grey;'>段位：</text><text class="badge badge-warning text-white">{{list.rank_name}}</text></view>
+        <view style='font-size:28rpx;color:grey;padding-left:70rpx;padding-right:70rpx;border-bottom:1px dashed gray;padding-bottom:15px;'>签名：<text style='font-size:26rpx;color:grey;'>{{list.brief == "" ? '这个懒家伙什么也没写~' : list.brief}}</text></view>
+
+        <!--他发的，说的  -->
+<view class="activity">
+    <text>Ta的动态</text>
+</view> 
+<!--说的  -->
+<block wx:for="{{list.saylist}}" wx:key="item">
+  <view class="detail" bindtap='golistDetail' data-id="{{item.sid}}">
+    <view class="user_icon">
+    <image src="{{item.pic}}" class="user_logo"></image>
+    <text class="user_name">{{item.nickname}}</text>
+  </view>
+  <view class="user_detail">
+    <view class="user_detail_info">
+       <text>{{item.content}}</text>
+    </view>
+    <view class="user_detail_pic" wx:if="{{item.pic_list.length}}!=0">
+      <block wx:for="{{item.pic_list}}" wx:for-item="image">
+        <image class="detail_pic" bindtap="showPic" data-allPic="{{item.pic_list}}" data-ip="{{item.web_server}}" data-pic="{{image.filename}}" src="{{image.filename}}"></image>
+      </block>  
+    </view>
+    <view class="user_detail_addr">
+      <image src="../../images/time.png" class="addr_time"></image>
+      <text class="addr_date">{{item.addtime}}</text>
+      <image src="../../images/address.png" class="addr_icon"></image>
+      <text class="addr_info">{{item.address}}</text>
+    </view>
+  </view>
+  </view>
+</block>
+<!--发的  -->
+<block wx:for="{{list.noticelist}}" wx:key="item">
+  <view class="detail">
+    <view class="user_icon">
+    <image src="{{item.pic}}" class="user_logo"></image>
+    <text class="user_name">{{item.nickname}}</text>
+  </view>
+  <view class="user_detail">
+    <view class="user_detail_top">
+      <text class="user_job"> {{item.area}}</text>
+      <text class="user_money">{{item.money}}</text>
+    </view>
+    <view class="user_detail_info">
+       <text>{{item.descript}}</text>
+    </view>
+    <view class="user_detail_pic" wx:if="{{item.pic_list.length}}!=0">
+      <block wx:for="{{item.pic_list}}" wx:for-item="image">
+        <image class="detail_pic" bindtap="showPic" data-allPic="{{item.pic_list}}" data-ip="{{item.web_server}}" data-pic="{{image.filename}}" src="{{image.filename}}"></image>
+      </block>  
+    </view>
+    <view class="user_detail_addr">
+      <image src="../../images/time.png" class="addr_time"></image>
+      <text class="addr_date">{{item.addtime}}</text>
+      <image src="../../images/address.png" class="addr_icon"></image>
+      <text class="addr_info">{{item.address}}</text>
+    </view>
+  </view>
+  </view>
+</block>
+
       </view>
      </view>
     </view>

@@ -88,17 +88,16 @@ Page({
           });
           return;
         } else {
-          wx.showModal({
-            title: '提示',
-            content: res.data.msg,
-            showCancel: false,
-            success: function (res) {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'success',
+            duration: 800,
+            complete: setTimeout(function () {
               wx.navigateTo({
-              url: '../listDetail/listDetail?id=' + sid
+                url: '../listDetail/listDetail?id=' + sid
               })
-            }
-
-          });
+            }, 800)
+          })
           //刷新该页面
           
         }
@@ -145,6 +144,39 @@ Page({
             that.setData({
               [_listislike]: 1,
               [_listlikes]: parseInt(that.data.list.likes) + 1
+            });
+
+          }
+
+        }
+      );
+    } else {
+      return;
+    }
+
+  },
+  //post 赞
+  onClickpImage: function (e) {
+    var that = this;
+   
+    var _uid = e.currentTarget.dataset.uid
+    var _id = e.currentTarget.id;
+    var sid = that.data.list.sid;
+    var ix = e.currentTarget.dataset.ix;
+    console.log(ix); console.log(that.data.list);
+   if (that.data.list.postlist[ix].islike == 0) {
+      request.userLike(
+        { "sid": sid, "pid":_id, "touid": _uid, "session_id": app.globalData.session_id },
+        (res) => {
+          console.log(res);
+          //成功后的处理。
+          var _listislike = 'list.postlist['+ix+'].islike';
+          var _listlikes = 'list.postlist[' + ix + '].likes';
+
+          if (res.data.code == 200) {
+            that.setData({
+              [_listislike]: 1,
+              [_listlikes]: parseInt(that.data.list.postlist[ix].likes) + 1
             });
 
           }

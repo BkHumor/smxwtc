@@ -160,7 +160,9 @@ page {
 }
 .user_detail_pic{
   width: 620rpx;
-  margin-top: 24rpx;
+  margin-top:15rpx;
+  margin-left:30rpx;
+
 }
 .detail_pic {
   height: 150rpx;

@@ -189,9 +189,13 @@ function userFansList(data, successCallback, errorCallback) {
   requestData(api.userFansList(), data, successCallback, errorCallback);
 }
 //赞动态
-
+function userLikePm(data, successCallback, errorCallback) {
+  requestData(api.userLikePm(), data, successCallback, errorCallback);
+}
 //评论动态
-
+function userPostPm(data, successCallback, errorCallback) {
+  requestData(api.userPostPm(), data, successCallback, errorCallback);
+}
 module.exports = {
     login: login,
     getBanner: getBanner,
@@ -230,4 +234,6 @@ module.exports = {
     userUnFollow: userUnFollow,
     userFollowList: userFollowList,
     userFansList: userFansList,
+    userLikePm: userLikePm,
+    userPostPm:userPostPm
 };

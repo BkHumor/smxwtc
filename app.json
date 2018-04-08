@@ -15,7 +15,11 @@
     "pages/userCenter/userCenter",
     "pages/listDetail/listDetail",
     "pages/myser/myser",
-    "pages/other/other"
+    "pages/other/other",
+    "pages/pmlike/pmlike",
+    "pages/pmpost/pmpost",
+    "pages/follow/follow",
+    "pages/fans/fans"
   ],
   "window": {
     "enablePullDownRefresh": true,
@@ -41,12 +45,7 @@
           "text": "M友排行",
           "pagePath": "pages/rank/rank"
       },
-      {
-        "iconPath": "images\/ser2.png",
-        "selectedIconPath": "images\/ser1.png",
-        "text": "M友动态",
-        "pagePath": "pages/serlist/serlist"
-      },
+
       {
         "iconPath": "images/account.png",
         "selectedIconPath": "images/accountAct.png",

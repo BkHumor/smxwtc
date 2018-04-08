@@ -35,5 +35,11 @@ Page({
             desc: '三门峡名人榜',
             path: '/pages/rank/rank'
         }
-    }
+    },
+    gotouser: function (e) {
+
+      wx.navigateTo({
+        url: '../other/other?touid=' + e.currentTarget.dataset.uid
+      })
+    },
 })

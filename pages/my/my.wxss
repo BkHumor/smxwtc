@@ -13,8 +13,6 @@
   width: 100%;
   max-width: 100%;
   clear: both;
- 
-
 }
 
 .app .user-center {
@@ -66,17 +64,26 @@
   margin-top: 40rpx;
   border-radius: 50%;
   vertical-align: middle;
+  border:2px solid lightblue;
+
 }
 
 .app .user-center .show-view .nickname {
   vertical-align: middle;
   margin-top: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 2px;
   color: #117887;
   font-family:"PingFangSC-Regular","sans-serif","STHeitiSC-Light","微软雅黑","Microsoft YaHei";
   font-size: 30rpx;
 }
-
+.app .user-center .show-view .mname {
+  vertical-align: middle;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  color: #117887;
+  font-family:"PingFangSC-Regular","sans-serif","STHeitiSC-Light","微软雅黑","Microsoft YaHei";
+  font-size: 22rpx;
+}
 .app .user-center .show-view .icon-rightarrow {
   position: absolute;
   top: 50%;

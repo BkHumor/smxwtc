@@ -1,0 +1,18 @@
+<import src="../template/notice.wxml" />
+<view class="index_list" wx:if="{{list.length > 0}}" wx:for="{{list}}" wx:key="item">  
+
+<navigator  class="index_list_nav" url="../listDetail/listDetail?id={{item.sid}}" hover-class="navigator-hover">
+<template is="listHeader" data="{{uid:item.lastuid,userPic:item.pic,userNick:item.nickname,publishTime:item.create_date}}" />
+<template is="listPm" data="{{listContent:item.message, listMsg:item.msg}}" />
+ </navigator>
+ </view>
+ <view wx:if="{{list.length == 0}}">
+  <view class="tipbox">
+      <view class="tipimg" >
+        <image src="../../images/tipPic.png"></image>
+      </view>
+  </view>
+  <view class="tipBottom">
+       <text>还木有赞，赶紧说点好听的让大家给你点赞吧~</text>
+  </view>
+  </view>

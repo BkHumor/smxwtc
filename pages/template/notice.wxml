@@ -1,1 +1,13 @@
-  
+  //公用模版
+<template name="listPm">
+<view class="listContent"><text style="font-size:12px;">{{listContent}} <text class="text-info">“{{listMsg}}”</text></text></view>
+</template>
+<template name="listHeader">
+    <view class="list_header">
+        <view class="list_header_left">
+            <image bindtap="gotouser"  data-uid="{{uid}}" mode="aspectFill" src="{{userPic}}"></image>
+            <view bindtap="gotouser" class="nickname" data-uid="{{uid}}">{{userNick}}</view>
+        </view>
+        <view class="list_header_right">{{publishTime}}</view>
+    </view>
+</template>

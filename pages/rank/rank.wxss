@@ -30,7 +30,8 @@ page {
     text-align: center;
     white-space: nowrap;
     vertical-align: baseline;
-    border-radius: 0.25rem;
+    border-radius: 4.25rem;
+
 }
 .table {
   border: 0px solid darkgray;
@@ -62,10 +63,21 @@ page {
   height: 3rem;
   align-items: center;
 }
+.th-l{
+   width: 40%;
+  justify-content: center;
+  background:#117887;
+  color: #fff;
+  display: flex;
+  height: 3rem;
+  align-items: center;
+}
 .tr .td-img{
   width:60%;
 }
 .nickname {
   font-size: 26rpx;
+  color:#117887;
+
 
 }

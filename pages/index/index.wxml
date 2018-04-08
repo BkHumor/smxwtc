@@ -8,7 +8,7 @@
   </block>
 </swiper>
 <!--首页轮播图结束-->
-<view class="lineBg"></view>
+
 <!--公告开始  -->
 <view class="">
 
@@ -45,23 +45,17 @@
 <!--快速入口结束-->
 <view class="lineBg"></view>
 <!--ser开始-->
-<view class="activity">
-    <text>最新动态</text>
-</view> 
+<navigator class="activity"  url="../serlist/serlist" hover-class="navigator-hover">
+    <text style="font-size:13px;">最新动态</text>
+    <text style="float:right;font-size:12px;">更多>>　</text>
+</navigator> 
 <view class="index_list">
   <view class="index_list_nav" url="../listDetail/listDetail?id={{item.sid}}" hover-class="navigator-hover" wx:for="{{list}}" wx:key="item">
     <template is="listHeader" data="{{uid:item.uid,userPic:item.pic,userNick:item.nickname,publishTime:item.addtime}}" />
     <template is="listTemp" data="{{listPic:item.pic_list[0].filename,listContent:item.descript,listAid:item.pic_list[0]['aid']}}" />
     <view class="list_footer">
       <!-- <view class="agreeNum agree_{{item.likes}}">{{item.likes}}</view> -->
-    <view class="h_canvas">
-    <view class="v-canvas">
-    <canvas canvas-id="canvas_wi" style="{{canvas_style}}" class="myCanvas"/>
-    </view>
-    <view class="v-img">
-      
-    </view>
-    </view>
+
       
       <image  src="../../images/address.png" class="addr_icon {{item.address == '' ? 'hidden': ''}}" data-lng="{{item.lng}}" data-lat="{{item.lat}}" bindtap="showMap"></image>
         <text class="addr_info" bindtap="showMap" data-lng="{{item.lng}}" data-lat="{{item.lat}}">{{item.address}}</text>

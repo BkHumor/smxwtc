@@ -1,15 +1,16 @@
 <view class="table" style='background:url(https://www.smxwtc.club/view/img/rankbg2.jpg)'>
   <view class="tr bg-w">
     <view class="th">排名</view>
-    <view class="th">昵称</view>
-    <view class="th ">分数</view>
+    <view class="th-l">昵称</view>
+    <view class="th">分数</view>
     <view class="th ">段位</view>
   </view>
   <block wx:for="{{listData}}" wx:key="{{item}}">
     <view class="tr">
-      <view class="td">{{item.ix}}</view>
-      <view class="td td-img"><image class="rank-img" src="{{item.avatar_url}}"></image><text class="nickname">{{item.nickname}}</text></view>
-      <view class="td">{{item.rank}}</view>
+      <view class="td" wx:if="{{item.ix<=3}}"><image style="width:38px;height:38px;" src="../../images/rank{{item.ix}}.png"></image></view>
+      <view class="td" wx:if="{{item.ix>3}}">{{item.ix}}</view>
+      <view class="td-img"><image class="rank-img" bindtap="gotouser" data-uid="{{item.uid}}" src="{{item.avatar_url}}"></image><text class="nickname"  bindtap="gotouser" data-uid="{{item.uid}}" >{{item.nickname}}</text></view>
+      <view class="td" style='color:#d57c32;'>{{item.rank}}</view>
       <view class="td badge-warning badge text-white">{{item.rank_name}}</view>
     </view>
   </block>

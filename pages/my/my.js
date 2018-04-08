@@ -49,6 +49,18 @@ Page({
     wx.navigateTo({
       url: '../userCenter/userCenter',
     })
+  },
+  //关注
+  gofollowlist: function(e) {
+    wx.navigateTo({
+      url: '../follow/follow?id=' + e.currentTarget.dataset.touid,
+    })
+  },
+  //fans
+   gofanslist: function (e) {
+    wx.navigateTo({
+      url: '../fans/fans?id=' + e.currentTarget.dataset.touid,
+    })
   }
 })
 

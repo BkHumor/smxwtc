@@ -14,7 +14,20 @@ Page({
   },
   onLoad: function(){
     var userInfo = app.globalData.userInfo;
-    console.log(userInfo);
+    if(userInfo == undefined) {
+      var that = this;
+      request.getUser(
+        { "session_id": app.globalData.session_id },
+        (res) => {
+         that.setData({
+           'userInfo.pic': res.data.avatar_url,
+           'userInfo.brief':res.data.brief,
+           'userInfo.sex':res.data.sex
+
+          })
+        },
+      )
+    }
     this.setData({userInfo:userInfo});
   },
   onShow: function(){

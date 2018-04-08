@@ -9,7 +9,7 @@
   </view>
   <view class="user_detail">
     <view class="user_detail_info">
-       <text>{{item.content}}</text>
+       <text style="padding-left:30rpx;">{{item.content}}</text>
     </view>
     <view class="user_detail_pic" wx:if="{{item.pic_list.length}}!=0">
       <block wx:for="{{item.pic_list}}" wx:for-item="image">
