@@ -41,9 +41,11 @@
 }
 
 .listPic {
-  width: 50%;
+  width: 100%;
   height: 360rpx;
   margin-bottom: 16rpx;
+  border-radius:16px;
+
 }
 
 .listTitle {

@@ -196,6 +196,14 @@ function userLikePm(data, successCallback, errorCallback) {
 function userPostPm(data, successCallback, errorCallback) {
   requestData(api.userPostPm(), data, successCallback, errorCallback);
 }
+//商家入驻
+function companyApply(data, successCallback, errorCallback) {
+  requestData(api.companyApply(), data, successCallback, errorCallback);
+}
+//入驻图片
+function companyPic(data, imageList, successCallback, errorCallback) {
+  requestDataPic(api.companyPic(), data, imageList, successCallback, errorCallback);
+}
 module.exports = {
     login: login,
     getBanner: getBanner,
@@ -235,5 +243,7 @@ module.exports = {
     userFollowList: userFollowList,
     userFansList: userFansList,
     userLikePm: userLikePm,
-    userPostPm:userPostPm
+    userPostPm:userPostPm,
+    companyApply:companyApply,
+    companyPic:companyPic
 };

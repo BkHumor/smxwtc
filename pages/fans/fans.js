@@ -1,66 +1,46 @@
-// pages/fans/fans.js
+var request = require('../../utils/request.js');
+var app = getApp();
+var page =1;
+var totalList = [];
+var touid = 0;
 Page({
+  data: {},
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
-  
+  onLoad: function (e, options) {
+    // 页面初始化 options为页面跳转所带来的参数
+    console.log(e.id);
+    touid = e.id;
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
-  
+    //号友动态
+
+    request.userFansList
+    (
+      { "session_id": app.globalData.session_id,touid: touid},
+      (res) => {
+        console.log(res);
+        var datalist = res.data;
+        this.setData({
+          list: datalist
+        })
+      },
+    );
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
+  //赞
+  gotouser: function (e) {
+
+    wx.navigateTo({
+      url: '../other/other?touid=' + e.currentTarget.dataset.uid
+    })
+  },
+  golistDetail: function (e) {
+
+    wx.navigateTo({
+      url: '../listDetail/listDetail?id=' + e.currentTarget.dataset.id
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
+});
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
-})

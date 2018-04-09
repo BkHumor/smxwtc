@@ -199,6 +199,17 @@ const v39 = 'user-pmpost.htm';
 function userPostPm() {
   return api + v39;
 }
+//商家入驻
+const v40 = 'company-apply.htm';
+function companyApply() {
+  return api + v40;
+}
+//入驻图片
+const v41 = 'company-pic.htm';
+function companyPic() {
+  return api + v41;
+}
+
 module.exports = {
   login: login,
   getBanner: getBanner,
@@ -238,6 +249,7 @@ module.exports = {
   userFollowList: userFollowList,
   userFansList: userFansList,
   userLikePm: userLikePm,
-  userPostPm: userPostPm
-
+  userPostPm: userPostPm,
+  companyApply: companyApply,
+  companyPic: companyPic,
 };

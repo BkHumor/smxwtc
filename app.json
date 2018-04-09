@@ -19,13 +19,14 @@
     "pages/pmlike/pmlike",
     "pages/pmpost/pmpost",
     "pages/follow/follow",
-    "pages/fans/fans"
+    "pages/fans/fans",
+    "pages/apply/apply"
   ],
   "window": {
     "enablePullDownRefresh": true,
     "navigationBarBackgroundColor": "#1A93DF",
     "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "多彩M城"
+    "navigationBarTitleText": "多彩同城"
   },
   "tabBar": {
     "borderStyle": "white",
@@ -42,7 +43,7 @@
       {
           "iconPath": "images\/rank_1.png",
           "selectedIconPath": "images\/rank_2.png",
-          "text": "M友排行",
+          "text": "名人榜",
           "pagePath": "pages/rank/rank"
       },
 

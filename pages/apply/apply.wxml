@@ -1,0 +1,54 @@
+<view class="index">
+
+
+             <view class="wxh" >
+                
+                  <view class="box">
+                    <view class="qt">联系人：</view>
+                    <input class="fr" value="{{lxr_inputVal}}" bindinput="lxr_bt"/>
+                  </view>
+
+                  <view class="box">
+                    <view class="qt">联系电话：</view>
+                    <input type="number" class="fr" maxlength="11" value="{{dh_inputVal}}"  bindinput="dh_bt"/>
+                  </view>
+
+                  <view class="box">
+                    <view class="qt">商铺名称：</view>
+                    <input class="fr" value="{{mc_inputVal}}" bindinput="mc_bt"/>
+                  </view>
+
+                  <view class="box">
+                    <view class="qt" bindblur="bindTextAreaBlur">商铺简介：</view>
+                    
+                    <textarea class="fr" value="{{js_inputVal}}" style="height:100rpx;"  bindinput="js_bt"/>
+                  </view>
+                 
+                
+            </view>
+
+            <view class="footer">
+            <view class="box">
+                    <view class="qt">店面照：</view>
+                    
+                     <view class="weui-uploader__bd">
+                            <view class="weui-uploader__files" id="uploaderFiles">
+                                
+                                <block>
+                                    <view class="weui-uploader__file" bindtap="previewImage">
+                                        <image bindtap="previewImage" class="weui-uploader__img" src="{{pic}}" mode="aspectFill" />
+                                    </view>
+                                </block>
+                            </view>
+                            <view class="weui-uploader__input-box">
+                                <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                            </view>
+                        </view>
+                  </view>
+            <em>注：请保持电话通畅，稍后将由工作人员与您联系<i style="width:100%; display:block;float:left">或联系：15729014019(刘老师)</i></em>
+            </view>
+
+ <button class="weui-btn tc" style="background:#1EADCB" type="primary" bindtap="saveClick">提交</button>
+        
+
+</view>

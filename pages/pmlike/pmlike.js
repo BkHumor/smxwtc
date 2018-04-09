@@ -16,10 +16,16 @@ Page({
       { "session_id": app.globalData.session_id },
       (res) => {
         console.log(res);
-        var datalist = res.data.data;
-        this.setData({
-          list: datalist
-        })
+        if(res.data.code == '203') {
+          this.setData({
+            list: []
+          })
+        } else if(res.data.code == '200') {
+          var datalist = res.data.data;
+          this.setData({
+            list: datalist
+          })
+        }
       },
     );
   },
@@ -50,7 +56,11 @@ Page({
             
 
             }
-
+            if(res.data.code=='203') {
+              that.setData({
+                list: []
+              })
+            }
           },
         )
       }

@@ -15,11 +15,16 @@ Page({
     request.userPostPm(
       { "session_id": app.globalData.session_id },
       (res) => {
-        console.log(res);
-        var datalist = res.data.data;
-        this.setData({
-          list: datalist
-        })
+        if(res.data.code == '200') {
+          var datalist = res.data.data;
+          this.setData({
+            list: datalist
+          })
+        } else if(res.data.code == '203') {
+          this.setData({
+            list: []
+          })
+        }
       },
     );
   },
@@ -40,7 +45,7 @@ Page({
 
           if (res.data.code == '200') {
             totalList = that.data.list.concat(res.data.data);
-          } else {
+          } else  {
             totalList = that.data.list;
           }
 
@@ -51,6 +56,10 @@ Page({
           if (res.data.code == "202") {
 
 
+          } else if(res.data.code =='203') {
+            that.setData({
+              list: []
+            })
           }
 
         },
