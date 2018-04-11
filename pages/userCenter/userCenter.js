@@ -5,8 +5,8 @@ Page({
   data: {
     userInfo: {
       nickname: '',
-      sex: 0,
-      pic: 'https://www.smxwtc.club/view/img/default_avatar.jpg'
+      sex: '男',
+      pic: ''
     },
     genderArr:['男','女'],
     isFromBack: false,
@@ -14,6 +14,7 @@ Page({
   },
   onLoad: function(){
     var userInfo = app.globalData.userInfo;
+    console.log(userInfo);
     if(userInfo == undefined) {
       var that = this;
       request.getUser(
@@ -22,13 +23,23 @@ Page({
          that.setData({
            'userInfo.pic': res.data.avatar_url,
            'userInfo.brief':res.data.brief,
-           'userInfo.sex':res.data.sex
+           'userInfo.sex': res.data.sex == '' ? '男' : res.data.sex
 
           })
         },
       )
+    } else {
+      var that = this;
+      that.setData({
+        'userInfo.pic': userInfo.avatar_url,
+        'userInfo.brief': userInfo.brief,
+        'userInfo.sex': userInfo.sex == '' ? '男' : userInfo.sex
+
+      })
+      console.log(that.data.userInfo);
     }
-    this.setData({userInfo:userInfo});
+
+    //this.setData({userInfo:userInfo});
   },
   onShow: function(){
 
@@ -53,6 +64,7 @@ Page({
   },
 
   changeGender: function(e){
+    console.log('aaa'+e);
     this.setData({
       'userInfo.sex': e.detail.value == 0 ? '男':'女'
     })
@@ -132,7 +144,7 @@ Page({
                 duration: 800,
                 complete: setTimeout(function () {
                   wx.navigateTo({
-                    url: '../serlist/serlist'
+                    url: '../my/my'
                   })
                 }, 800)
               })
@@ -146,7 +158,7 @@ Page({
             duration: 800,
             complete: setTimeout(function () {
               wx.navigateTo({
-                url: '../serlist/serlist'
+                url: '../my/my'
               })
             }, 800)
           })

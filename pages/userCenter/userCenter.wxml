@@ -18,6 +18,7 @@
         <view class="picker">{{userInfo.sex}}</view>
       </picker>
     </view>
+    
     <view class="centerPage-info-item">
       <label>个性签名</label>
       <label class="ico-moon icon-rightarrow"></label>

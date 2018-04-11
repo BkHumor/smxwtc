@@ -38,6 +38,19 @@ App({
                 if(that.session_idCallback) {
                   that.session_idCallback(session_id);
                 }
+                wx.getUserInfo({
+                  success: function (res) {
+                    request.checkLogin(
+                      {
+                        'iv': res.iv,
+                        'encryptedData': res.encryptedData,
+                        'session_id': session_id
+                      }, (res) => {
+                        that.globalData.userInfo = res.data.msg;
+                      }
+                    )
+                  }
+                })
               }
             )
           } else {
@@ -88,7 +101,8 @@ App({
     )
   },
   globalData: {
-    session_id:''
+    session_id:'',
+    userInfo:{}
   }
 })
 

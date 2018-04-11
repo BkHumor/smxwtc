@@ -10,7 +10,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "1.0.0",
 	"appid": "wxa4b71ee2d47bf326",
-	"projectname": "smx_wtc",
+	"projectname": "smx-wtc",
 	"condition": {
 		"search": {
 			"current": -1,

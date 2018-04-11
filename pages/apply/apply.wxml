@@ -17,7 +17,15 @@
                     <view class="qt">商铺名称：</view>
                     <input class="fr" value="{{mc_inputVal}}" bindinput="mc_bt"/>
                   </view>
-
+                  <view class="box">
+                  <view class="qt">所属行业：</view>
+                    <radio-group class="radio-group" bindchange="radioChange">
+                        <label class="radio" wx:for="{{classdata}}">
+                            <radio value="{{item.classid}}" color="#1EADCB" checked="{{item.checked}}"/>{{item.value}}
+                        </label>
+                    </radio-group>
+                  
+                  </view>
                   <view class="box">
                     <view class="qt" bindblur="bindTextAreaBlur">商铺简介：</view>
                     
@@ -34,7 +42,7 @@
                      <view class="weui-uploader__bd">
                             <view class="weui-uploader__files" id="uploaderFiles">
                                 
-                                <block>
+                                <block wx:if="{{isSrc}}">
                                     <view class="weui-uploader__file" bindtap="previewImage">
                                         <image bindtap="previewImage" class="weui-uploader__img" src="{{pic}}" mode="aspectFill" />
                                     </view>

@@ -8,6 +8,8 @@ var contact_name = ""//企业联系人
   , name//企业名称
 
   , brief//企业简介
+  
+  ,classid//行业
 Page({
   data: {
     
@@ -15,7 +17,15 @@ Page({
     mc_inputVal: "",
     dh_inputVal: "",
     js_inputVal: "",
-    pic: ''
+    pic: '',
+    classdata: [
+      { classid: '0', value: '装修建材' },
+      { classid: '1', value: '娱乐饮食'},
+      { classid: '2', value: '宠物之家' },
+      { classid: '3', value: '名品服饰' },
+      { classid: '4', value: '家电维修' },
+      { classid: '5', value: '其他服务', checked: 'true' },
+    ]
 
   },
   chooseImage: function () {//选择图标
@@ -62,7 +72,10 @@ Page({
   js_bt: function (e) {
     brief = e.detail.value;
   },
-
+  radioChange: function (e) {
+    console.log(e.detail);
+    classid = e.detail.value;
+  },
 
   saveClick: function () {
 
@@ -109,7 +122,8 @@ Page({
         "contact_name": contact_name,
         "mobile": mobile,
         "name":name,
-        "brief":brief
+        "brief":brief,
+        "classid":classid
       },
       (res) => {
         console.log(res);

@@ -1,5 +1,5 @@
 // 主地址
-const api = 'https://www.smxwtc.club/smxwtc/?';
+const api = 'https://smxwtc.club/smxwtc/?';
 // 登录
 const v1 = 'user-login.htm';
 function login() {

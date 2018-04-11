@@ -49,7 +49,11 @@ Page({
         app.getUserInfo();
       },
       fail: function () {
-        //登录态过期
+
+        // //登录态过期
+        // request.checkLogin(
+        //   {}
+        // )
         app.getUserInfo();
       }
     });
@@ -108,8 +112,8 @@ Page({
   },
   onShow: function () {
     // 页面显示
-    var that = this;
-    that.onLoad();
+    //var that = this;
+
   },
   
 
@@ -170,7 +174,21 @@ Page({
         })
       },
     );
-   
+    request.sayIndexNew(
+      { "session_id": app.globalData.session_id },
+      (res) => {
+        console.log(res);
+        var datalist = res.data;
+        datalist.forEach((item) => {
+          item.address = item.address.length > 12 ? item.address.substring(0, 12) + '…' : item.address; //要截取字段的字符串
+
+        })
+        console.log(datalist);
+        that.setData({
+          list: datalist
+        })
+      },
+    );
 
   },
   onHide: function () {

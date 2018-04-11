@@ -9,7 +9,11 @@
 .wxh{ width: 90%; height: auto;  display: block; float: right; padding: 0 5%; line-height: auto; background: #ffffff; float: left; margin: 0px 0; font-size: 14px; color: #000000;}
 
 
+.radio-group{
+  float:right;
+width:195px;
 
+}
 .box{width:100%; padding: 12px 0%; height: auto; line-height: 35px;  display: block; float: left; border-bottom: 1px solid #f9f9f9; font-size: 13px;}
 .qt{ width: 200rpx; display: block; float: left;font-size: 13px;}
 .fr{ display: block; float: left; text-align: right; margin-top: 0px; border: 0; font-size: 13px; border: 1px solid #F3F3F3; width: 450rpx; text-align: left; padding: 3px 10rpx; margin-bottom: 3px; line-height: 15px;  }
